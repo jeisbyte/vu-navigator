@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Directions - VU Tower Navigator</title>
+    <link rel="icon" type="image/jpeg" href="images/vu-logo.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>🧭 Rooms & Directions</h1>
+        <nav>
+            <a href="index.html" class="directionav">⬅️ Floor Selector🏠</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="directions-intro">
+            <p>Click on any room name below to jump directly to its walking directions from the <strong>main entrance on
+                    Ground Floor</strong>.</p>
+        </div>
+
+        <div class="quick-index">
+            <h2>Jump to a Room (A–Z)</h2>
+            <ul class="index-list">
+                <!-- All named rooms, sorted A–Z, each linking to its direction card ID -->
+                <li><a href="#art-gallery">Art Gallery</a></li>
+                <li><a href="#cafeteria">Cafeteria</a></li>
+                <li><a href="#computer-lab-1">Computer Lab 1</a></li>
+                <li><a href="#computer-lab-2">Computer Lab 2</a></li>
+                <li><a href="#cosmetic-lab">Cosmetic Lab</a></li>
+                <li><a href="#custome">Costume/Changing Room</a></li>
+                <li><a href="#dance">Dance Studio</a></li>
+                <li><a href="#engineering-graphics-design">Engineering & Graphics Design</a></li>
+                <li><a href="#hr-office">H.R Office</a></li>
+                <li><a href="#ict-lab-1">ICT Lab 1</a></li>
+                <li><a href="#ict-lab2">ICT Lab 2</a></li>
+                <li><a href="#mechanical-lab">Mechanical Lab</a></li>
+                <li><a href="#music">Music Room</a></li>
+                <li><a href="#principal-office">Principal's Office</a></li>
+                <li><a href="#reception">Reception</a></li>
+                <li><a href="#registration">Registration Office</a></li>
+                <li><a href="#server">Server Room</a></li>
+                <li><a href="#sick-bay">Sick Bay</a></li>
+                <li><a href="#staff">Staff Office</a></li>
+                <li><a href="#university-administrator">University Administrator</a></li>
+                <li><a href="#cooperative-education-office">Co-operative Education Office</a></li>
+                <li><a href="#marketing-office">Marketing Office</a></li>
+                <li><a href="#vu-law-clinic">VU Law Clinic</a></li>
+                <li><a href="#student-support-office">Student Support Office</a></li>
+                <!-- Floor 1 has many staff/study rooms; no unique named rooms besides those already covered -->
+                <!-- Floor 2 boardrooms etc. only have numbers, so no A–Z entry -->
+                <!-- Floor 3 -->
+                <li><a href="#sick-bay">Sick Bay</a></li>
+                <li><a href="#art-room">Art Room</a></li>
+                <li><a href="#anatomy-lab">Anatomy Laboratory</a></li>
+                <li><a href="#nutrition-lab">Nutrition Laboratory</a></li>
+                <li><a href="#skills-lab">Skills Laboratory</a></li>
+                <!-- Floor 4 – under construction -->
+                <!-- Floor 5 -->
+                <li><a href="#room-501">Laboratory 1</a></li>
+                <li><a href="#room-502">Laboratory 2</a></li>
+                <!-- Floor 6 -->
+                <li><a href="#guild-office">Guild Office</a></li>
+                <li><a href="#dean-institute">Dean Institute</a></li>
+                <li><a href="#executive-assistant">Executive Assistant & H.O.D Education</a></li>
+                <!-- Floor 7 -->
+                <li><a href="#hod-film-production">H.O.D Film Production</a></li>
+                <li><a href="#room-708">Law School Board Room</a></li>
+                <li><a href="#office-registrar-law">Law School Registrar</a></li>
+                <li><a href="#office-associate-dean">Associate Dean</a></li>
+                <li><a href="#office-dean">Office of the Dean</a></li>
+                <!-- Floor 8 -->
+                <li><a href="#vice-chancellor">Vice Chancellor's Coordination Office</a></li>
+                <li><a href="#quality-assurance">Quality Assurance Office</a></li>
+                <!-- Floor 9 -->
+                <li><a href="#room-907">Law Society Office</a></li>
+                <li><a href="#room-908">Program Administrators</a></li>
+                <li><a href="#room-909">Meeting Room 1</a></li>
+                <li><a href="#room-910">Meeting Room 2</a></li>
+                <li><a href="#room-905">Silent Room 1</a></li>
+                <li><a href="#room-906">Silent Room 2</a></li>
+            </ul>
+
+            <!-- Dropdown – clean, every room listed, matching anchors -->
+            <div class="select-container">
+                <label for="roomSelect"><strong>🔽 Quick Find by Room Number:</strong></label>
+                <select id="roomSelect" onchange="window.location.href = this.value;">
+                    <option value="">-- Select a room number --</option>
+                    <!-- Basement 2 -->
+                    <option value="#room-b201">B201 (Free study)</option>
+                    <option value="#dance">B202 (Dance Studio)</option>
+                    <option value="#room-b203">B203 (Dance Studio)</option>
+                    <option value="#room-b204">B204 (Free study)</option>
+                    <option value="#room-b205">B205 (Free study)</option>
+                    <option value="#room-b206">B206 (Free study)</option>
+                    <option value="#custome">B207 (Changing Room)</option>
+                    <option value="#music">B208 (Music Room)</option>
+                    <option value="#mechanical-lab">B209 (Mechanical Lab)</option>
+                    <option value="#room-b210">B210 (Free study)</option>
+                    <!-- Basement 1 -->
+                    <option value="#room-b101">B101</option>
+                    <option value="#room-b102">B102</option>
+                    <option value="#room-b103">B103</option>
+                    <option value="#staff">B104 (Staff Office)</option>
+                    <option value="#registration">B105 (Registration Office)</option>
+                    <option value="#room-b106">B106</option>
+                    <option value="#principal-office">B107 (Principal's Office)</option>
+                    <option value="#room-b108">B108</option>
+                    <option value="#room-b109">B109</option>
+                    <option value="#room-b110">B110</option>
+                    <option value="#room-b111">B111</option>
+                    <option value="#room-b112">B112</option>
+                    <!-- Ground Floor -->
+                    <option value="#art-gallery">G01 - Art Gallery</option>
+                    <option value="#student-support-office">G02 - Student Support Office</option>
+                    <option value="#marketing-office">G03 - Marketing Office</option>
+                    <option value="#cooperative-education-office">G04 - Co-operative Education Office</option>
+                    <option value="#university-administrator">G05 - University Administrator</option>
+                    <option value="#vu-law-clinic">G06 - VU Law Clinic</option>
+                    <!-- Floor 1 -->
+                    <option value="#room-101">101 - Staff Office</option>
+                    <option value="#room-102">102 - Staff Office</option>
+                    <option value="#room-103">103 - Staff Office</option>
+                    <option value="#room-104">104</option>
+                    <option value="#room-105">105</option>
+                    <option value="#room-106">106</option>
+                    <option value="#room-107">107</option>
+                    <option value="#room-108">108</option>
+                    <option value="#room-109">109</option>
+                    <option value="#room-110">110</option>
+                    <option value="#room-111">111</option>
+                    <option value="#room-112">112</option>
+                    <option value="#room-113">113</option>
+                    <option value="#room-114">114</option>
+                    <option value="#room-115">115</option>
+                    <option value="#room-116">116</option>
+                    <option value="#room-117">117</option>
+                    <option value="#room-118">118</option>
+                    <option value="#room-119">119</option>
+                    <option value="#room-120">120</option>
+                    <option value="#room-121">121</option>
+                    <option value="#room-122">122</option>
+                    <option value="#room-123">123</option>
+                    <option value="#room-124">124</option>
+                    <option value="#room-125">125</option>
+                    <option value="#room-127">127</option>
+                    <!-- Floor 2 -->
+                    <option value="#cosmetic-lab">201 - Cosmetic Lab</option>
+                    <option value="#ICT-Lab-1">202 - ICT Lab 1</option>
+                    <option value="#room-203">203</option>
+                    <option value="#room-204">204</option>
+                    <option value="#room-205">205</option>
+                    <option value="#room-206">206</option>
+                    <option value="#room-207">207 - Boardroom 1</option>
+                    <option value="#room-208">208 - Boardroom 2</option>
+                    <option value="#room-209">209 - Boardroom 3</option>
+                    <option value="#room-210">210 (Storage)</option>
+                    <!-- Floor 3 -->
+                    <option value="#room-301">301 - Health Science</option>
+                    <option value="#room-302">302 - Public Health Laboratory</option>
+                    <option value="#room-303">303 - H.O.D Food & Nutrition</option>
+                    <option value="#room-304">304 - Pharmacy Department Units</option>
+                    <option value="#room-305">305 - H.O.D Pharmacy</option>
+                    <option value="#room-306">306 - Dean Faculty of Health Science</option>
+                    <option value="#sick-bay">307 - Sick Bay</option>
+                    <option value="#room-308">308 - H.O.D Nursing & Midwifery</option>
+                    <!-- Floor 4 -->
+                    <option value="#floor-4">Floor 4 (Pharmacy – under construction)</option>
+                    <!-- Floor 5 -->
+                    <option value="#room-501">501 - Laboratory 1</option>
+                    <option value="#room-502">502 - Laboratory 2</option>
+                    <option value="#engineering-graphics-design">503 - Engineering & Graphics</option>
+                    <!-- Floor 6 -->
+                    <option value="#room-601">6-01</option>
+                    <option value="#room-602">6-02</option>
+                    <option value="#room-603">6-03</option>
+                    <option value="#room-604">6-04</option>
+                    <option value="#room-605">6-05</option>
+                    <option value="#room-606">6-06</option>
+                    <option value="#guild-office">Guild Office</option>
+                    <option value="#server">Server Room</option>
+                    <option value="#computer-lab-1">Computer Lab 1</option>
+                    <option value="#dean-institute">Dean Institute</option>
+                    <option value="#executive-assistant">Executive Assistant & H.O.D Education</option>
+                    <!-- Floor 7 -->
+                    <option value="#room-701">7-01 - Multimedia Studio</option>
+                    <option value="#room-702">7-02 - Film Tudi Sound Studio</option>
+                    <option value="#hod-film-production">H.O.D TV Radio & Film Production</option>
+                    <option value="#room-703">7-03 - Moot Court</option>
+                    <option value="#room-704">7-04</option>
+                    <option value="#room-705">7-05</option>
+                    <option value="#room-706">7-06</option>
+                    <option value="#room-708">7-08 - Law School Board Room & Staff Lounge</option>
+                    <option value="#office-registrar-law">Office of the Registrar – School of Law</option>
+                    <option value="#office-associate-dean">Office of Associate Dean</option>
+                    <option value="#office-dean">Office of the Dean</option>
+                    <!-- Floor 8 -->
+                    <option value="#room-801">8-01</option>
+                    <option value="#room-802">8-02</option>
+                    <option value="#room-803">8-03</option>
+                    <option value="#room-804">8-04</option>
+                    <option value="#room-805">8-05</option>
+                    <option value="#room-806">8-06</option>
+                    <option value="#room-807">8-07</option>
+                    <option value="#room-808">8-08</option>
+                    <option value="#room-809">8-09</option>
+                    <option value="#room-810">8-10</option>
+                    <option value="#vice-chancellor">Vice Chancellor's Coordination Office</option>
+                    <option value="#quality-assurance">Quality Assurance Office</option>
+                    <!-- Floor 9 -->
+                    <option value="#cafeteria">901 - Cafeteria</option>
+                    <option value="#room-902">902 - Library</option>
+                    <option value="#computer-lab-2">903 - Editing Suite</option>
+                    <option value="#room-904">904 - IT Room</option>
+                    <option value="#room-905">905 - Silent Room 1</option>
+                    <option value="#room-906">906 - Silent Room 2</option>
+                    <option value="#room-907">907 - Law Society Office</option>
+                    <option value="#room-908">908 - Program Administrators</option>
+                    <option value="#room-909">909 - Meeting Room 1</option>
+                    <option value="#room-910">910 - Meeting Room 2</option>
+                </select>
+            </div>
+
+            <h2>Search by Floor</h2>
+            <ul class="index-list floor-index">
+                <li><a href="#floor-B2">B2</a></li>
+                <li><a href="#floor-B1">B1</a></li>
+                <li><a href="#floor-G">G</a></li>
+                <li><a href="#floor-1">1</a></li>
+                <li><a href="#floor-2">2</a></li>
+                <li><a href="#floor-3">3</a></li>
+                <li><a href="#floor-4">4</a></li>
+                <li><a href="#floor-5">5</a></li>
+                <li><a href="#floor-6">6</a></li>
+                <li><a href="#floor-7">7</a></li>
+                <li><a href="#floor-8">8</a></li>
+                <li><a href="#floor-9">9</a></li>
+            </ul>
+        </div>
+
+        <!-- Directions by Floor – every room listed with photos -->
+        <div class="directions-by-floor">
+            <!-- ========== BASEMENT 2 ========== -->
+            <h2 class="floor-heading" id="floor-B2">Basement 2 (B2)</h2>
+            <div class="direction-card" id="room-b201">
+                <div class="card-tag"><span>B2</span><span>B201</span></div>
+                <p><strong>Free study room:</strong> Take elevator down to B2. Turn right, second
+                    room on the right is B201.</p>
+                <img src="images/b201-img.jpeg" alt="B201" class="room-image">
+            </div>
+            <div class="direction-card" id="dance">
+                <div class="card-tag"><span>B2</span><span>B202</span></div>
+                <p><strong>Dance Studio:</strong> Take the elevator to Basement 2, Exit the elevator and turn left. You
+                    should see the dance studio.</p>
+                <img src="images/b202-img.jpeg" alt="B202" class="room-image">
+            </div>
+            <div class="direction-card" id="room-b203">
+                <div class="card-tag"><span>B2</span><span>B203</span></div>
+                <p><strong>Dance Studio:</strong> Take the elevator to Basement 2, Turn left (second room next to B202).
+                </p>
+                <img src="images/b203-img.jpeg" alt="B203" class="room-image">
+            </div>
+            <div class="direction-card" id="room-b204">
+                <div class="card-tag"><span>B2</span><span>B204</span></div>
+                <p><strong>Free study room:</strong>Take the elevator to Basement 2, Second to last room on left
+                    corridor in the middle.</p>
+                <img src="images/b204-img.jpeg" alt="B204" class="room-image">
+            </div>
+            <div class="direction-card" id="room-b205">
+                <div class="card-tag"><span>B2</span><span>B205</span></div>
+                <p><strong>Free study room:</strong> Take the elevator to Basement 2, at the end of the left corridor
+                    you will find B205.</p>
+                <img src="images/b205-img.jpeg" alt="B205" class="room-image">
+            </div>
+            <div class="direction-card" id="room-b206">
+                <div class="card-tag"><span>B2</span><span>B206</span></div>
+                <p><strong>Free study room:</strong> Take the elevator to Basement 2, Exit the elevator and turn left.
+                    The last room on the left side of the corridor in the middle is B206.</p>
+                <img src="images/b206-img.jpeg" alt="B206" class="room-image">
+            </div>
+            <div class="direction-card" id="custome">
+                <div class="card-tag"><span>B2</span><span>B207</span></div>
+                <p><strong>Changing/Custome Room:</strong> Take the elevator to Basement 2, Exit the Elevator and Turn
+                    right.</p>
+                <img src="images/b207-img.jpeg" alt="Costume Room" class="room-image">
+            </div>
+            <div class="direction-card" id="music">
+                <div class="card-tag"><span>B2</span><span>B208</span></div>
+                <p><strong>Music Room:</strong> Take the elevator to Basement 2, Take the left corridor after dance
+                    studio.</p>
+                <img src="images/music-room.jpeg" alt="Music Room" class="room-image">
+            </div>
+            <div class="direction-card" id="mechanical-lab">
+                <div class="card-tag"><span>B2</span><span>B209</span></div>
+                <p><strong>Mechanical Lab:</strong>Take the elevator to Basement 2, Straight ahead from elevator, Follow
+                    the right corridor as shown in
+                    the image below.</p>
+                <img src="images/b209-img.jpeg" alt="B209" class="room-image">
+            </div>
+            <div class="direction-card" id="room-b210">
+                <div class="card-tag"><span>B2</span><span>B210</span></div>
+                <p><strong>Free study room:</strong> Take the elevator to Basement 2, Exit the elevator and turn left.
+                    The last room on the left side of the corridor in the middle is B210.</p>
+                <img src="images/b210-img.jpeg" alt="B210" class="room-image">
+            </div>
+
+            <!-- ========== BASEMENT 1 ========== -->
+            <h2 class="floor-heading" id="floor-B1">Basement 1 (B1)</h2>
+            <div class="direction-card" id="room-b101">
+                <div class="card-tag"><span>B1</span><span>B101</span></div>
+                <p><strong>Study Room:</strong>Take the elevator to B1, Exit the elevator and the door to the right is
+                    B101.</p>
+                <img src="images/b101.jpeg" alt="Study Room" class="room-image">
+            </div>
+            <div class="direction-card" id="room-b102">
+                <div class="card-tag"><span>B1</span><span>B102</span></div>
+                <p><strong>Study Room:</strong>Take the elevator to B1, Exit the elevator and B102 is the first door on
+                    the right corner.</p>
+                <img src="images/b102.jpeg" alt="B102" class="room-image">
+            </div>
+            <div class="direction-card" id="room-b103">
+                <div class="card-tag"><span>B1</span><span>B103</span></div>
+                <p><strong>Study Room:</strong>Take the elevator to B1, Exit the elevator and B103 is on your right.</p>
+                <img src="images/b103.jpeg" alt="B103" class="room-image">
+            </div>
+            <div class="direction-card" id="staff">
+                <div class="card-tag"><span>B1</span><span>B104</span></div>
+                <p><strong>Staff Office:</strong>Take the elevator to B1, Exit the elevator and B104 is the third door
+                    on
+                    the right corridor near the main entrance.</p>
+                <img src="images/b104.jpeg" alt="B104" class="room-image">
+            </div>
+            <div class="direction-card" id="registration">
+                <div class="card-tag"><span>B1</span><span>B105</span></div>
+                <p><strong>Registration Office:</strong>Take the elevator to B1, Exit the elevator and B105 is the first
+                    door on
+                    the left corner.</p>
+                <img src="images/b105.jpeg" alt="B105" class="room-image">
+            </div>
+            <div class="direction-card" id="room-b106">
+                <div class="card-tag"><span>B1</span><span>B106</span></div>
+                <p><strong>Study Room:</strong>Take the elevator to B1, Exit the elevator and B106 is the second door on
+                    the left near the registration office.</p>
+                <img src="images/b106.jpeg" alt="B106" class="room-image">
+            </div>
+            <div class="direction-card" id="principal-office">
+                <div class="card-tag"><span>B1</span><span>B107</span></div>
+                <p><strong>Principal's Office:</strong> Take the elevator to B1, Exit the elevator and B107 is the first
+                    door on
+                    the left corridor.</p>
+                <img src="images/b107.jpeg" alt="B107" class="room-image">
+            </div>
+            <div class="direction-card" id="room-b108">
+                <div class="card-tag"><span>B1</span><span>B108</span></div>
+                <p><strong>Study Room:</strong> Take the elevator to B1, Exit the elevator and B108 on the left
+                    corridor.</p>
+                <img src="images/b108.jpeg" alt="B108" class="room-image">
+            </div>
+            <div class="direction-card" id="room-b109">
+                <div class="card-tag"><span>B1</span><span>B109</span></div>
+                <p><strong>Study Room:</strong>Take the elevator to B1, Exit the elevator and B109 is the second door
+                    After the principal's office.</p>
+                <img src="images/b109.jpeg" alt="B109" class="room-image">
+            </div>
+            <div class="direction-card" id="room-b110">
+                <div class="card-tag"><span>B1</span><span>B110</span></div>
+                <p><strong>Study Room:</strong> Take the elevator to B1, Exit the elevator and B110 is on the left
+                    corridor.</p>
+                <img src="images/b110.jpeg" alt="B110" class="room-image">
+            </div>
+            <div class="direction-card" id="room-b111">
+                <div class="card-tag"><span>B1</span><span>B111</span></div>
+                <p><strong>Study Room:</strong> Take the elevator to B1, Exit the elevator and B111 is on the left
+                    corridor near the exit.</p>
+                <img src="images/b111.jpeg" alt="B111" class="room-image">
+            </div>
+
+            <!-- ========== GROUND FLOOR ========== -->
+            <h2 class="floor-heading" id="floor-G">Ground Floor (G)</h2>
+            <div class="direction-card" id="reception">
+                <div class="card-tag"><span>G</span><span>Reception</span></div>
+                <p><strong>Reception:</strong> From the main entrance, walk straight, reception on your right.</p>
+                <img src="images/reception.jpeg" alt="Reception" class="room-image">
+            </div>
+            <div class="direction-card" id="art-gallery">
+                <div class="card-tag"><span>G</span><span>G01</span></div>
+                <p><strong>Art Gallery:</strong> Left of reception near the exit.</p>
+                <img src="images/art-gallery.jpeg" alt="Art Gallery" class="room-image">
+            </div>
+            <div class="direction-card" id="student-support-office">
+                <div class="card-tag"><span>G</span><span>G02</span></div>
+                <p><strong>Student Support Office:</strong> Near the elevators or down stairs to basement floor 1(BS1).
+                </p>
+                <img src="images/student-support-office.jpeg" alt="Student Support Office" class="room-image">
+            </div>
+            <div class="direction-card" id="marketing-office">
+                <div class="card-tag"><span>G</span><span>G03</span></div>
+                <p><strong>Marketing Office:</strong> Right corridor from entrance. Or first room near main entrance.
+                </p>
+                <img src="images/marketing-office.jpeg" alt="Marketing Office" class="room-image">
+            </div>
+            <div class="direction-card" id="cooperative-education-office">
+                <div class="card-tag"><span>G</span><span>G04</span></div>
+                <p><strong>Co-operative Education Office (C.E.O):</strong> Near the trophy case and Reception desk.
+                </p>
+                <img src="images/co-operative-education-office(C.E.O).jpeg" alt="C.E.O Office" class="room-image">
+            </div>
+            <div class="direction-card" id="university-administrator">
+                <div class="card-tag"><span>G</span><span>G05</span></div>
+                <p><strong>University Administrator.</strong> Near the trophy case and Reception desk.</p>
+                <img src="images/university-administrator.jpeg" alt="University Administrator" class="room-image">
+            </div>
+            <div class="direction-card" id="vu-law-clinic">
+                <div class="card-tag"><span>G</span><span>G06</span></div>
+                <p><strong>VU Law Clinic:</strong> Near Art gallery exhibition room(left corridor).</p>
+                <img src="images/vu-law-clinic.jpeg" alt="VU Law Clinic" class="room-image">
+            </div>
+
+            <!-- ========== FLOOR 1 ========== -->
+            <h2 class="floor-heading" id="floor-1">Floor 1</h2>
+            <div class="direction-card">
+                <p>Right corridor: Rooms 101-114 (Staff Offices). Left corridor: 115-125 (Study rooms).</p>
+            </div>
+            <!-- 101-103 offices -->
+            <div class="direction-card" id="room-101">
+                <div class="card-tag"><span>1</span><span>101</span></div>
+                <p><strong>Staff Office:</strong> Take the elevator to Floor 1, Exit the elevator and the office is on
+                    your right.</p>
+                <img src="images/101.jpeg" alt="Room 101" class="room-image">
+            </div>
+            <div class="direction-card" id="room-102">
+                <div class="card-tag"><span>1</span><span>102</span></div>
+                <p><strong>Staff Office:</strong> Take the elevator to Floor 1, Exit the elevator and the office is on
+                    the right corridor.</p>
+                <img src="images/102.jpeg" alt="Room 102" class="room-image">
+            </div>
+            <div class="direction-card" id="room-103">
+                <div class="card-tag"><span>1</span><span>103</span></div>
+                <p><strong>Staff Office:</strong> Take the elevator to Floor 1, Exit the elevator and the office is on
+                    the right corridor.</p>
+                <img src="images/103.jpeg" alt="Room 103" class="room-image">
+            </div>
+            <!-- 104-125 study rooms with images where available -->
+            <div class="direction-card" id="room-104">
+                <div class="card-tag"><span>1</span><span>104</span></div>
+                <p><strong>Staff Office:</strong> Take the elevator to Floor 1, Exit the elevator and the office is on
+                    the right corridor.</p><img src="images/104.jpeg" alt="Room 104" class="room-image">
+            </div>
+            <div class="direction-card" id="room-105">
+                <div class="card-tag"><span>1</span><span>105</span></div>
+                <p><strong>Staff Office:</strong> Take the elevator to Floor 1, Exit the elevator and the office is on
+                    the right corridor.</p><img src="images/105.jpeg" alt="Room 105" class="room-image">
+            </div>
+            <div class="direction-card" id="room-106">
+                <div class="card-tag"><span>1</span><span>106</span></div>
+                <p><strong>Staff Office:</strong> Take the elevator to Floor 1, Exit the elevator and the office is on
+                    the right corridor.</p>
+            </div>
+            <div class="direction-card" id="room-107">
+                <div class="card-tag"><span>1</span><span>107</span></div>
+                <p><strong>Staff Office:</strong> Take the elevator to Floor 1, Exit the elevator and the office is on
+                    the right corridor.</p>
+                <img src="images/107.jpeg" alt="Room 107" class="room-image">
+            </div>
+            <div class="direction-card" id="room-108">
+                <div class="card-tag"><span>1</span><span>108</span></div>
+                <p><strong>Staff Office:</strong> Take the elevator to Floor 1, Exit the elevator and the office is on
+                    the right corridor.</p>
+                <img src="images/108.jpeg" alt="Room 108" class="room-image">
+            </div>
+            <div class="direction-card" id="room-109">
+                <div class="card-tag"><span>1</span><span>109</span></div>
+                <p><strong>Staff Office:</strong> Take the elevator to Floor 1, Exit the elevator and the office is on
+                    the right corridor.</p>
+                <img src="images/109.jpeg" alt="Room 109" class="room-image">
+            </div>
+            <div class="direction-card" id="room-110">
+                <div class="card-tag"><span>1</span><span>110</span></div>
+                <p><strong>Staff Office:</strong> Take the elevator to Floor 1, Exit the elevator and the office is on
+                    the right corridor.</p>
+                <img src="images/110.jpeg" alt="Room 110" class="room-image">
+            </div>
+            <div class="direction-card" id="room-111">
+                <div class="card-tag"><span>1</span><span>111</span></div>
+                <p><strong>Staff Office:</strong> Take the elevator to Floor 1, Exit the elevator and the office is on
+                    the right corridor.</p>
+                <img src="images/111.jpeg" alt="Room 111" class="room-image">
+            </div>
+            <div class="direction-card" id="room-112">
+                <div class="card-tag"><span>1</span><span>112</span></div>
+                <p><strong>Staff Office:</strong> Take the elevator to Floor 1, Exit the elevator and the office is on
+                    the right corridor.</p><img src="images/112.jpeg" alt="Room 112" class="room-image">
+            </div>
+            <div class="direction-card" id="room-113">
+                <div class="card-tag"><span>1</span><span>113</span></div>
+                <p><strong>Staff Office:</strong> Take the elevator to Floor 1, Exit the elevator and the office is on
+                    the right corridor.</p><img src="images/113.jpeg" alt="Room 113" class="room-image">
+            </div>
+            <div class="direction-card" id="room-114">
+                <div class="card-tag"><span>1</span><span>114</span></div>
+                <p><strong>Staff Office:</strong> Take the elevator to Floor 1, Exit the elevator and the office is on
+                    the right corridor.</p>
+                <img src="images/114.jpeg" alt="Room 114" class="room-image">
+            </div>
+            <div class="direction-card" id="room-115">
+                <div class="card-tag"><span>1</span><span>115</span></div>
+                <p><strong>Study Room:</strong> Take the elevator to Floor 1, Exit the elevator and the room is on the
+                    left corridor.</p>
+            </div>
+            <div class="direction-card" id="room-116">
+                <div class="card-tag"><span>1</span><span>116</span></div>
+                <p><strong>Study Room:</strong> Take the elevator to Floor 1, Exit the elevator and the room is on the
+                    left corridor.</p>
+                <img src="images/116.jpeg" alt="Room 116" class="room-image">
+            </div>
+            <div class="direction-card" id="room-117">
+                <div class="card-tag"><span>1</span><span>117</span></div>
+                <p><strong>Study Room:</strong> Take the elevator to Floor 1, Exit the elevator and the room is on the
+                    left corridor.</p>
+                <img src="images/117.jpeg" alt="Room 117" class="room-image">
+            </div>
+            <div class="direction-card" id="room-118">
+                <div class="card-tag"><span>1</span><span>118</span></div>
+                <p><strong>Study Room:</strong> Take the elevator to Floor 1, Exit the elevator and the room is on the
+                    left corridor.</p>
+                <img src="images/118.jpeg" alt="Room 118" class="room-image">
+            </div>
+            <div class="direction-card" id="room-119">
+                <div class="card-tag"><span>1</span><span>119</span></div>
+                <p><strong>Study Room:</strong> Take the elevator to Floor 1, Exit the elevator and the room is on the
+                    left corridor.</p>
+                <img src="images/119.jpeg" alt="Room 119" class="room-image">
+            </div>
+            <div class="direction-card" id="room-120">
+                <div class="card-tag"><span>1</span><span>120</span></div>
+                <p><strong>Study Room:</strong> Take the elevator to Floor 1, Exit the elevator and the room is on the
+                    left corridor.</p>
+                <img src="images/120.jpeg" alt="Room 120" class="room-image">
+            </div>
+            <div class="direction-card" id="room-121">
+                <div class="card-tag"><span>1</span><span>121</span></div>
+                <p><strong>Study Room:</strong> Take the elevator to Floor 1, Exit the elevator and the room is on the
+                    left corridor.</p>
+                <img src="images/121.jpeg" alt="Room 121" class="room-image">
+            </div>
+            <div class="direction-card" id="room-122">
+                <div class="card-tag"><span>1</span><span>122</span></div>
+                <p><strong>Study Room:</strong> Take the elevator to Floor 1, Exit the elevator and the room is on the
+                    left corridor.</p>
+                <img src="images/122.jpeg" alt="Room 122" class="room-image">
+            </div>
+            <div class="direction-card" id="room-123">
+                <div class="card-tag"><span>1</span><span>123</span></div>
+                <p><strong>Study Room:</strong> Take the elevator to Floor 1, Exit the elevator and the room is on the
+                    left corridor.</p>
+                <img src="images/123.jpeg" alt="Room 123" class="room-image">
+            </div>
+            <div class="direction-card" id="room-124">
+                <div class="card-tag"><span>1</span><span>124</span></div>
+                <p><strong>Study Room:</strong> Take the elevator to Floor 1, Exit the elevator and the room is on the
+                    left corridor.</p>
+                <img src="images/124.jpeg" alt="Room 124" class="room-image">
+            </div>
+            <div class="direction-card" id="room-125">
+                <div class="card-tag"><span>1</span><span>125</span></div>
+                <p><strong>Study Room:</strong> Take the elevator to Floor 1, Exit the elevator and the room is on the
+                    left corridor.</p>
+                <img src="images/125.jpeg" alt="Room 125" class="room-image">
+            </div>
+            <div class="direction-card" id="room-127">
+                <div class="card-tag"><span>1</span><span>127</span></div>
+                <p><strong>Study Room:</strong> Take the elevator to Floor 1, Exit the elevator and the room is on the
+                    left corridor.</p>
+                <img src="images/127.jpeg" alt="Room 127" class="room-image">
+            </div>
+
+            <!-- ========== FLOOR 2 ========== -->
+            <h2 class="floor-heading" id="floor-2">Floor 2</h2>
+            <div class="direction-card" id="cosmetic-lab">
+                <div class="card-tag"><span>2</span><span>201</span></div>
+                <p><strong>Cosmetic Lab:</strong> Elevator to floor 2, turn right, corner room.</p>
+                <img src="images/cosmetic-lab.jpeg" alt="Cosmetic Lab" class="room-image">
+            </div>
+            <div class="direction-card" id="ICT-Lab-1">
+                <div class="card-tag"><span>2</span><span>202</span></div>
+                <p><strong>ICT Lab 1:</strong> Right side, in front of cosmetic lab.</p>
+                <img src="images/ict-lab-1.jpeg" alt="ICT Lab 1" class="room-image">
+            </div>
+            <div class="direction-card" id="room-203">
+                <div class="card-tag"><span>2</span><span>203</span></div>
+                <p><strong>Study Room:</strong> Take the elevator to Floor 2, Exit the elevator and the room is on the
+                    left corridor.</p>
+                <img src="images/203.jpeg" alt="Room 203" class="room-image">
+            </div>
+            <div class="direction-card" id="room-204">
+                <div class="card-tag"><span>2</span><span>204</span></div>
+                <p><strong>Study Room:</strong> Take the elevator to Floor 2, Exit the elevator and the room is on the
+                    left corridor.</p>
+                <img src="images/204.jpeg" alt="Room 204" class="room-image">
+            </div>
+            <div class="direction-card" id="room-205">
+                <div class="card-tag"><span>2</span><span>205</span></div>
+                <p><strong>Study Room:</strong> Take the elevator to Floor 2, Exit the elevator and the room is on the
+                    left corridor.</p>
+                <img src="images/205.jpeg" alt="Room 205" class="room-image">
+            </div>
+            <div class="direction-card" id="room-206">
+                <div class="card-tag"><span>2</span><span>206</span></div>
+                <p><strong>Study Room:</strong> Take the elevator to Floor 2, Exit the elevator and the room is on the
+                    left corridor.</p>
+                <img src="images/206.jpeg" alt="Room 206" class="room-image">
+            </div>
+            <div class="direction-card" id="room-207">
+                <div class="card-tag"><span>2</span><span>207</span></div>
+                <p><strong>Boardroom 1:</strong></p>
+                <img src="images/boardroom-1.jpeg" alt="Boardroom 1" class="room-image">
+            </div>
+            <div class="direction-card" id="room-208">
+                <div class="card-tag"><span>2</span><span>208</span></div>
+                <p><strong>Boardroom 2:</strong></p>
+                <img src="images/boardroom-2.jpeg" alt="Boardroom 2" class="room-image">
+            </div>
+            <div class="direction-card" id="room-209">
+                <div class="card-tag"><span>2</span><span>209</span></div>
+                <p><strong>Boardroom 3:</strong></p>
+                <img src="images/boardroom-3.jpeg" alt="Boardroom 3" class="room-image">
+            </div>
+
+            <!-- ========== FLOOR 3 ========== -->
+            <h2 class="floor-heading" id="floor-3">Floor 3</h2>
+            <div class="direction-card">
+                <p>Floor 3 houses the Faculty of Health Science, including several departmental offices, laboratories,
+                    and the sick bay.</p>
+            </div>
+            <div class="direction-card" id="room-301">
+                <div class="card-tag"><span>3</span><span>301</span></div>
+                <p><strong>Study room:</strong> Take the elevator to Floor 3, exit the elevator. First door on your
+                    right is 301</p>
+                <img src="images/301.jpg" alt="Room 301" class="room-image">
+            </div>
+            <div class="direction-card" id="room-302">
+                <div class="card-tag"><span>3</span><span>302</span></div>
+                <p><strong>Public Health Laboratory:</strong> From the elevator on Floor 3, exit the elevator and the
+                    lab
+                    is the second door on the right.</p>
+                <img src="images/PUBLIC-HEALTH-LABORATORY-302.jpg" alt="Public Health Lab" class="room-image">
+            </div>
+            <div class="direction-card" id="room-303">
+                <div class="card-tag"><span>3</span><span>303</span></div>
+                <p><strong>H.O.D Food & Nutrition:</strong> Take the elevator to floor 3. Right corridor after exiting
+                    the elevator, first door.</p>
+                <img src="images/H.O.D-FOOD-&-NUTRITION-PUBLIC-HEALTH-303.jpg" alt="H.O.D Food & Nutrition"
+                    class="room-image">
+            </div>
+            <div class="direction-card" id="room-304">
+                <div class="card-tag"><span>3</span><span>304</span></div>
+                <p><strong>Pharmacy Department Units:</strong> Take the elevator to floor 3, right corridor, near the
+                    end.</p>
+                <img src="images/PHAMARCY-DEPARTMENT-UNITS-304.jpeg" alt="Pharmacy Dept" class="room-image">
+            </div>
+            <div class="direction-card" id="room-305">
+                <div class="card-tag"><span>3</span><span>305</span></div>
+                <p><strong>H.O.D Pharmacy:</strong> Take the elevator to floor 3, exit the elevator. The last room at
+                    the right corridor is the office</p>
+                <img src="images/H.O.D-PHAMARCY-305.jpg" alt="H.O.D Pharmacy" class="room-image">
+            </div>
+            <div class="direction-card" id="room-306">
+                <div class="card-tag"><span>3</span><span>306</span></div>
+                <p><strong>Dean Faculty of Health Science:</strong> Take the elevator to Floor 3, first door on your
+                    left is the office.</p>
+                <img src="images/DEAN-FACULTY-OF-HEALTH-SCIENCE-306.jpg" alt="Dean's Office" class="room-image">
+            </div>
+            <div class="direction-card" id="sick-bay">
+                <div class="card-tag"><span>3</span><span>307</span></div>
+                <p><strong>Sick Bay:</strong> Immediately to your left after exiting the elevator on Floor 3. It is
+                    clearly marked with a medical sign.</p>
+                <img src="images/SICK-BAY-307.jpg" alt="Sick Bay" class="room-image">
+            </div>
+            <div class="direction-card" id="room-308">
+                <div class="card-tag"><span>3</span><span>308</span></div>
+                <p><strong>H.O.D Nursing & Midwifery:</strong> Take the elevator to floor 3, exit the elevator and take
+                    the left cooridor. first room on the corridor is the office.</p>
+                <img src="images/H.O.D-NURSING-&-MIDWIFERY-308.jpg" alt="H.O.D Nursing" class="room-image">
+            </div>
+            <div class="direction-card" id="art-room">
+                <div class="card-tag"><span>3</span><span>Unnumbered</span></div>
+                <p><strong>Art Room:</strong> This study/art room is on the left side of the corridor, past the sick
+                    bay. Walk past the sick bay and look for the door on your left.</p>
+                <img src="images/ART-ROOM.jpg" alt="Art Room" class="room-image">
+            </div>
+            <div class="direction-card" id="anatomy-lab">
+                <div class="card-tag"><span>3</span><span>Unnumbered</span></div>
+                <p><strong>Anatomy Laboratory:</strong> Take the elevator to floor 3, exit the elevator. Take the left
+                    corridor, the anatomy lab is opposite the art room.</p>
+                <img src="images/ANATOMY-LABORATORY.jpg" alt="Anatomy Lab" class="room-image">
+            </div>
+            <div class="direction-card" id="nutrition-lab">
+                <div class="card-tag"><span>3</span><span>Unnumbered</span></div>
+                <p><strong>Nutrition Laboratory:</strong> Located at the far end of the left corridor, after the Anatomy
+                    Lab.
+                    Walk past the Anatomy Lab and it’s the next door on the left.</p>
+                <img src="images/NUTRITION-LABORATORY.jpg" alt="Nutrition Lab" class="room-image">
+            </div>
+            <div class="direction-card" id="skills-lab">
+                <div class="card-tag"><span>3</span><span>Unnumbered</span></div>
+                <p><strong>Skills Laboratory:</strong> The Skills Lab is the last room on the right corridor, past the
+                    Dean’s
+                    office. Turn right from the elevator, walk to the end, and you’ll see it on your right.</p>
+                <img src="images/SKILLS-LABORATORY.jpg" alt="Skills Lab" class="room-image">
+            </div>
+
+            <!-- ========== FLOOR 4 ========== -->
+            <h2 class="floor-heading" id="floor-4">Floor 4</h2>
+            <div class="direction-card">
+                <div class="card-tag"><span>4</span><span>💊</span></div>
+                <p>The Pharmacy Department is under construction.</p>
+            </div>
+
+            <!-- ========== FLOOR 5 ========== -->
+            <h2 class="floor-heading" id="floor-5">Floor 5</h2>
+            <div class="direction-card" id="room-501">
+                <div class="card-tag"><span>5</span><span>501</span></div>
+                <p><strong>Laboratory 1:</strong> Take the elevator to Floor 5, exit and turn right.</p>
+                <img src="images/LABORATORY-1.jpg" alt="Laboratory 1" class="room-image">
+            </div>
+            <div class="direction-card" id="room-502">
+                <div class="card-tag"><span>5</span><span>502</span></div>
+                <p><strong>Laboratory 2:</strong> Take the elevator to floor 5, exit the elevator and walk straight
+                    ahead then the first door on your left is lab-2.</p>
+                <img src="images/LABORATORY-2.jpg" alt="Laboratory 2" class="room-image">
+            </div>
+            <div class="direction-card" id="engineering-graphics-design">
+                <div class="card-tag"><span>5</span><span>503</span></div>
+                <p><strong>Engineering & Graphics Design:</strong> Take the elevator to Floor 5, exit and walk straight
+                    ahead. 503 is the last room on the right.</p>
+                <img src="images/ENGINEERING-&-GRAPHICS-DESIGN.jpg" alt="Engineering & Graphics Design"
+                    class="room-image">
+            </div>
+
+            <!-- ========== FLOOR 6 ========== -->
+            <h2 class="floor-heading" id="floor-6">Floor 6</h2>
+            <div class="direction-card" id="room-601">
+                <div class="card-tag"><span>6</span><span>6-01</span></div>
+                <p><strong>Study room:</strong> Take the elevator to Floor 6, Exit the elevator and the room is straight
+                    ahead.</p>
+                <img src="images/6-01.jpeg" alt="Room 6-01" class="room-image">
+            </div>
+            <div class="direction-card" id="room-602">
+                <div class="card-tag"><span>6</span><span>6-02</span></div>
+                <p><strong>Study room:</strong> Take the elevator to Floor 6, Exit the elevator and the room is straight
+                    ahead.</p>
+                <img src="images/6-02.jpeg" alt="Room 6-02" class="room-image">
+            </div>
+            <div class="direction-card" id="room-603">
+                <div class="card-tag"><span>6</span><span>6-03</span></div>
+                <p><strong>Study room:</strong> Take the elevator to Floor 6, Exit the elevator and the room is straight
+                    ahead.</p>
+                <img src="images/6-03.jpeg" alt="Room 6-03" class="room-image">
+            </div>
+            <div class="direction-card" id="room-604">
+                <div class="card-tag"><span>6</span><span>6-04</span></div>
+                <p><strong>Study room:</strong> Take the elevator to Floor 6, Exit the elevator and the room is straight
+                    ahead.</p>
+                <img src="images/6-04.jpeg" alt="Room 6-04" class="room-image">
+            </div>
+            <div class="direction-card" id="room-605">
+                <div class="card-tag"><span>6</span><span>6-05</span></div>
+                <p><strong>Study room:</strong> Take the elevator to Floor 6, Exit the elevator and the room is straight
+                    ahead.</p>
+                <img src="images/6-05.jpeg" alt="Room 6-05" class="room-image">
+            </div>
+            <div class="direction-card" id="room-606">
+                <div class="card-tag"><span>6</span><span>6-06</span></div>
+                <p><strong>Study room:</strong> Take the elevator to Floor 6, Exit the elevator and the room is straight
+                    ahead.</p>
+                <img src="images/6-06.jpeg" alt="Room 6-06" class="room-image">
+            </div>
+            <div class="direction-card" id="guild-office">
+                <div class="card-tag"><span>6</span><span>6-07</span></div>
+                <p><strong>Guild Office:</strong> Take the elevator to Floor 6, Exit the elevator and the room is on the
+                    left.</p>
+                <img src="images/guild-office.jpeg" alt="Guild Office" class="room-image">
+            </div>
+            <div class="direction-card" id="computer-lab-1">
+                <div class="card-tag"><span>6</span><span>6-08</span></div>
+                <p><strong>Computer Lab 1:</strong> Take the elevator to Floor 6, Exit the elevator and turn right.</p>
+                <img src="images/computer-lab1.jpeg" alt="Computer Lab 1" class="room-image">
+            </div>
+            <div class="direction-card" id="server">
+                <div class="card-tag"><span>6</span><span>6-09</span></div>
+                <p><strong>Server Room:</strong> Next to Computer Lab 1.</p>
+                <img src="images/server-room.jpeg" alt="Server Room" class="room-image">
+            </div>
+            <div class="direction-card" id="dean-institute">
+                <div class="card-tag"><span>6</span><span>6-10</span></div>
+                <p><strong>Dean Institute (of Education):</strong> Take the elevator to Floor 6, Exit the elevator and
+                    the room is straight ahead at the end of the corridor on the right.</p>
+                <img src="images/dean-institute-of-education.jpeg" alt="Dean Institute" class="room-image">
+            </div>
+            <div class="direction-card" id="executive-assistant">
+                <div class="card-tag"><span>6</span><span>6-11</span></div>
+                <p><strong>Executive Assistant & H.O.D Institute of Education:</strong> Take the elevator to Floor 6,
+                    Exit the elevator and the room is straight ahead at the end of the corridor on the right.</p>
+                <img src="images/executive-assisnatant-&-H.O.D-insititute-of-education.jpeg" alt="Executive Assistant"
+                    class="room-image">
+            </div>
+
+            <!-- ========== FLOOR 7 ========== -->
+            <h2 class="floor-heading" id="floor-7">Floor 7</h2>
+            <div class="direction-card">
+                <p>Floor 7 houses multimedia studios, moot court, law offices, and study rooms.</p>
+            </div>
+            <div class="direction-card" id="room-701">
+                <div class="card-tag"><span>7</span><span>7-01</span></div>
+                <p><strong>Multimedia Studio:</strong> Take the elevator to Floor 7, exit and turn right. The studio is
+                    the first door on the right.</p>
+                <img src="images/MULTI-MEDIA-STUDIO-7-01.jpg" alt="Multimedia Studio" class="room-image">
+            </div>
+            <div class="direction-card" id="room-702">
+                <div class="card-tag"><span>7</span><span>7-02</span></div>
+                <p><strong>Film Tudi Sound Studio:</strong> Right next to the Multimedia Studio, second door on the
+                    right.</p>
+                <img src="images/FILM-TUDI-SOUND-STUDIO-7-02.jpg" alt="Film Tudi Sound Studio" class="room-image">
+            </div>
+            <div class="direction-card" id="hod-film-production">
+                <div class="card-tag"><span>7</span><span>Unnumbered</span></div>
+                <p><strong>H.O.D TV Radio & Film Production:</strong> Take the elevator to floor 7, exit the elevator
+                    and the first room on your left is the office.</p>
+                <img src="images/H.O.D-TV-RADIO-&-FILM-PRODUCTION.jpg" alt="H.O.D Film Production" class="room-image">
+            </div>
+            <div class="direction-card" id="room-703">
+                <div class="card-tag"><span>7</span><span>7-03</span></div>
+                <p><strong>Moot Court:</strong> Take the elevator to floor 7, exit the elevator and the Mount Court is
+                    the first door straight ahead.</p>
+                <img src="images/MOUNT-COURT-7-03.jpg" alt="Moot Court" class="room-image">
+            </div>
+            <div class="direction-card" id="room-704">
+                <div class="card-tag"><span>7</span><span>7-04</span></div>
+                <p><strong>Study Room:</strong> Opposite the Mount Court, on the left.</p>
+                <img src="images/7-04.jpg" alt="7-04" class="room-image">
+            </div>
+            <div class="direction-card" id="room-705">
+                <div class="card-tag"><span>7</span><span>7-05</span></div>
+                <p><strong>Study Room:</strong> Next room after the Mount Court room.</p>
+                <img src="images/7-05.jpg" alt="7-05" class="room-image">
+            </div>
+            <div class="direction-card" id="room-706">
+                <div class="card-tag"><span>7</span><span>7-06</span></div>
+                <p><strong>Study Room:</strong> Opposite room 7-05.</p>
+                <img src="images/7-06.jpg" alt="7-06" class="room-image">
+            </div>
+            <div class="direction-card" id="room-708">
+                <div class="card-tag"><span>7</span><span>7-08</span></div>
+                <p><strong>Law School Board Room & Staff Lounge:</strong> At the end of the corridor straight ahead.</p>
+                <img src="images/LAW-SCHOOL-BOARD-ROOM-&-STAFF-LOUNGE.jpg" alt="Board Room" class="room-image">
+            </div>
+            <div class="direction-card" id="office-registrar-law">
+                <div class="card-tag"><span>7</span><span>Unnumbered</span></div>
+                <p><strong>Office of the Registrar – School of Law:</strong> Walk past the corridor, at the end turn
+                    right.</p>
+                <img src="images/OFFICE-OF-THE-REGISTRAR-SCHOOL-OF-LAW.jpg" alt="Registrar" class="room-image">
+            </div>
+            <div class="direction-card" id="office-associate-dean">
+                <div class="card-tag"><span>7</span><span>Unnumbered</span></div>
+                <p><strong>Office of Associate Dean:</strong> Near the Office of the Registrar, turn right at the end of
+                    the corridor.</p>
+                <img src="images/OFFICE-OF-ASSOCIATE-DEAN.jpg" alt="Associate Dean" class="room-image">
+            </div>
+            <div class="direction-card" id="office-dean">
+                <div class="card-tag"><span>7</span><span>Unnumbered</span></div>
+                <p><strong>Office of the Dean:</strong> Walk past the corridor then turn left.</p>
+                <img src="images/OFFICE-OF-THE-DEAN.jpg" alt="Dean" class="room-image">
+            </div>
+
+            <!-- ========== FLOOR 8 ========== -->
+            <h2 class="floor-heading" id="floor-8">Floor 8</h2>
+            <div class="direction-card" id="room-801">
+                <div class="card-tag"><span>8</span><span>8-01</span></div>
+                <p><strong>Study Room:</strong> Take the elevator to Floor 8, exit the elevator and turn right. The
+                    first door on the
+                    right is 8-01.</p>
+                <img src="images/8-01.jpg" alt="8-01" class="room-image">
+            </div>
+            <div class="direction-card" id="room-802">
+                <div class="card-tag"><span>8</span><span>8-02</span></div>
+                <p><strong>Study Room:</strong> Next to 8-01, second door on the right.</p>
+                <img src="images/8-02.jpg" alt="8-02" class="room-image">
+            </div>
+            <div class="direction-card" id="room-803">
+                <div class="card-tag"><span>8</span><span>8-03</span></div>
+                <p><strong>Study Room:</strong> Short walk straight ahead, then on your right.</p>
+                <img src="images/8-03.jpg" alt="8-03" class="room-image">
+            </div>
+            <div class="direction-card" id="room-804">
+                <div class="card-tag"><span>8</span><span>8-04</span></div>
+                <p><strong>Study Room:</strong> Opposite 8-03, on your left.</p>
+                <img src="images/8-04.jpg" alt="8-04" class="room-image">
+            </div>
+            <div class="direction-card" id="room-805">
+                <div class="card-tag"><span>8</span><span>8-05</span></div>
+                <p><strong>Study Room:</strong> Walk through the corridor; you'll see 8-05 before the end.</p>
+                <img src="images/8-05.jpg" alt="8-05" class="room-image">
+            </div>
+            <div class="direction-card" id="room-806">
+                <div class="card-tag"><span>8</span><span>8-06</span></div>
+                <p><strong>Study Room:</strong> Opposite 8-05.</p>
+                <img src="images/8-06.jpg" alt="8-06" class="room-image">
+            </div>
+            <div class="direction-card" id="room-807">
+                <div class="card-tag"><span>8</span><span>8-07</span></div>
+                <p><strong>Study Room:</strong> At the end of the corridor.</p>
+                <img src="images/8-07.jpg" alt="8-07" class="room-image">
+            </div>
+            <div class="direction-card" id="room-808">
+                <div class="card-tag"><span>8</span><span>8-08</span></div>
+                <p><strong>Study Room:</strong> Next to 8-07.</p>
+                <img src="images/8-08.jpg" alt="8-08" class="room-image">
+            </div>
+            <div class="direction-card" id="room-809">
+                <div class="card-tag"><span>8</span><span>8-09</span></div>
+                <p><strong>Study Room:</strong> On the left, after the end of the corridor.</p>
+                <img src="images/8-09.jpg" alt="8-09" class="room-image">
+            </div>
+            <div class="direction-card" id="room-810">
+                <div class="card-tag"><span>8</span><span>8-10</span></div>
+                <p><strong>Study Room:</strong> On the left, next to 8-09.</p>
+                <img src="images/8-10.jpg" alt="8-10" class="room-image">
+            </div>
+            <div class="direction-card" id="vice-chancellor">
+                <div class="card-tag"><span>8</span><span>Unnumbered</span></div>
+                <p><strong>Vice Chancellor's Coordination Office:</strong> At the end of the right corridor.</p>
+                <img src="images/VICE-CHANCELLOR'S-COORDINATION-OFFICE.jpg" alt="Vice Chancellor's Office"
+                    class="room-image">
+            </div>
+            <div class="direction-card" id="quality-assurance">
+                <div class="card-tag"><span>8</span><span>Unnumbered</span></div>
+                <p><strong>Quality Assurance Office:</strong> Next to the Vice Chancellor's Office.</p>
+                <img src="images/QUALITY-ASSURANCE.jpg" alt="Quality Assurance" class="room-image">
+            </div>
+
+            <!-- ========== FLOOR 9 ========== -->
+            <h2 class="floor-heading" id="floor-9">Floor 9</h2>
+            <div class="direction-card" id="cafeteria">
+                <div class="card-tag"><span>9</span><span>901</span></div>
+                <p><strong>Cafeteria:</strong> Take the elevator to floor 9, turn right, inside glass doors.</p>
+                <img src="images/CAFETERIA.jpg" alt="Cafeteria" class="room-image">
+            </div>
+            <div class="direction-card" id="room-902">
+                <div class="card-tag"><span>9</span><span>902</span></div>
+                <p><strong>Library:</strong> Take the elevator to floor 9, go through the left corridor and you should
+                    see the library at the end of the corridor.</p>
+                <img src="images/LIBRARY.jpg" alt="Library" class="room-image">
+            </div>
+            <div class="direction-card" id="computer-lab-2">
+                <div class="card-tag"><span>9</span><span>903</span></div>
+                <p><strong>Editing Suite:</strong> Take the elevator to floor 9, take the left corridor and enter the
+                    library, extreme end.</p>
+                <img src="images/EDITING-SUITE.jpg" alt="Editing Suite" class="room-image">
+            </div>
+            <div class="direction-card" id="room-904">
+                <div class="card-tag"><span>9</span><span>904</span></div>
+                <p><strong>IT Room:</strong> Take the elevator to floor 9, take the left corridor and enter the
+                    library, extreme end. Then enter the Edting suite. you should be seeing the IT ROOM.</p>
+                <img src="images/IT-ROOM.jpg" alt="IT Room" class="room-image">
+            </div>
+            <div class="direction-card" id="room-905">
+                <div class="card-tag"><span>9</span><span>905</span></div>
+                <p><strong>Silent Room 1:</strong> Take the elevator to floor 9, take the left corridor and enter the
+                    library, extreme end. Near the edting suite room.</p>
+                <img src="images/SILENT-ROOM-1.jpg" alt="Silent Room 1" class="room-image">
+            </div>
+            <div class="direction-card" id="room-906">
+                <div class="card-tag"><span>9</span><span>906</span></div>
+                <p><strong>Silent Room 2:</strong> Take the elevator to floor 9, take the left corridor and enter the
+                    library, extreme end. Near silent room 1.
+                </p>
+                <img src="images/SILENT-ROOM-2.jpg" alt="Silent Room 2" class="room-image">
+            </div>
+            <div class="direction-card" id="room-907">
+                <div class="card-tag"><span>9</span><span>907</span></div>
+                <p><strong>Law Society Office:</strong> Take the elevator to floor 9, exit the lift and on your left is
+                    the office.</p>
+                <img src="images/LAW-SOCIETY-OFFICE.jpg" alt="Law Society Office" class="room-image">
+            </div>
+            <div class="direction-card" id="room-908">
+                <div class="card-tag"><span>9</span><span>908</span></div>
+                <p><strong>Program Administrators:</strong> Take the elevator to floor 9, exit the lift and walk to the
+                    left corridor.</p>
+                <img src="images/PROGRAM-ADMINISTRATORS.jpg" alt="Program Administrators" class="room-image">
+            </div>
+            <div class="direction-card" id="room-909">
+                <div class="card-tag"><span>9</span><span>909</span></div>
+                <p><strong>Meeting Room 1:</strong> Take the elevator to floor 9, exit the lift and walk to the
+                    left corridor.</p>
+                <img src="images/MEETING-ROOM-1.jpg" alt="Meeting Room 1" class="room-image">
+            </div>
+            <div class="direction-card" id="room-910">
+                <div class="card-tag"><span>9</span><span>910</span></div>
+                <p><strong>Meeting Room 2:</strong> Take the elevator to floor 9, exit the lift and walk to the left
+                    corridor.</p>
+                <img src="images/MEETING-ROOM-2.jpg" alt="Meeting Room 2" class="room-image">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Real Life Project - Semester 1 | Victoria University</p>
+    </footer>
+</body>
+
+</html>
