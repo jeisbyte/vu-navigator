@@ -6,35 +6,47 @@
 
 /* --- CSS Custom Properties --- */
 :root {
-  --bg-dark: #07090f;
-  --bg-navy: #0d1425;
-  --bg-card: #111827;
-  --bg-glass: rgba(17, 24, 39, 0.7);
-  --accent: #3b82f6;
-  --accent-glow: rgba(59, 130, 246, 0.35);
-  --accent-vivid: #60a5fa;
-  --accent-2: #06b6d4;
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
+  /* ── Red, White & Blue Palette ── */
+  --bg-dark: #060810;
+  --bg-navy: #0a0f1e;
+  --bg-card: #0f1729;
+  --bg-glass: rgba(10, 15, 30, 0.75);
+
+  /* Primary accent: Vivid Red */
+  --accent: #dc2626;
+  --accent-glow: rgba(220, 38, 38, 0.35);
+  --accent-vivid: #ef4444;
+  --accent-2: #1d4ed8;           /* Bright blue as secondary accent */
+
+  /* Text — clean white spectrum */
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
   --text-muted: #64748b;
-  --border: rgba(255, 255, 255, 0.08);
-  --border-accent: rgba(59, 130, 246, 0.4);
+
+  /* Borders */
+  --border: rgba(255, 255, 255, 0.09);
+  --border-accent: rgba(220, 38, 38, 0.4);
+
+  /* Radius */
   --radius-sm: 10px;
   --radius-md: 16px;
   --radius-lg: 24px;
   --radius-xl: 32px;
-  --shadow-sm: 0 2px 8px rgba(0,0,0,0.4);
-  --shadow-md: 0 8px 24px rgba(0,0,0,0.5);
-  --shadow-lg: 0 16px 48px rgba(0,0,0,0.6);
-  --shadow-glow: 0 0 24px var(--accent-glow);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.45);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.55);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.65);
+  --shadow-glow: 0 0 28px var(--accent-glow);
+
   --transition: 0.22s cubic-bezier(0.4,0,0.2,1);
 
   /* Room type colours (for SVG) */
-  --room-office: #1e40af;
+  --room-office: #1e3a8a;
   --room-lab: #065f46;
-  --room-study: #78350f;
-  --room-utility: #4c1d95;
-  --room-social: #9d174d;
+  --room-study: #92400e;
+  --room-utility: #6b21a8;
+  --room-social: #9f1239;
   --room-corridor: #1e293b;
 }
 
@@ -64,7 +76,7 @@ body {
    HEADER
    ============================================= */
 header {
-  background: rgba(7, 9, 15, 0.95);
+  background: rgba(6, 8, 16, 0.97);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
@@ -80,7 +92,7 @@ header h1 {
   font-size: clamp(1.35rem, 4vw, 1.9rem);
   font-weight: 800;
   letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #ffffff 0%, var(--accent-vivid) 100%);
+  background: linear-gradient(135deg, #ffffff 30%, var(--accent-vivid) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -181,7 +193,7 @@ main {
 .hero-search-section {
   text-align: center;
   padding: 3rem 1rem 2rem;
-  background: linear-gradient(180deg, rgba(59,130,246,0.06) 0%, transparent 100%);
+  background: linear-gradient(180deg, rgba(220,38,38,0.06) 0%, transparent 100%);
   border-radius: var(--radius-xl);
   border: 1px solid var(--border);
   margin-bottom: 2.5rem;
@@ -197,7 +209,7 @@ main {
   transform: translateX(-50%);
   width: 600px;
   height: 600px;
-  background: radial-gradient(ellipse, rgba(59,130,246,0.12) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(220,38,38,0.1) 0%, rgba(29,78,216,0.06) 50%, transparent 70%);
   pointer-events: none;
 }
 
@@ -205,7 +217,7 @@ main {
   font-size: clamp(1.6rem, 5vw, 2.8rem);
   font-weight: 900;
   letter-spacing: -0.03em;
-  background: linear-gradient(135deg, #ffffff 0%, #60a5fa 50%, #06b6d4 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #ef4444 50%, #1d4ed8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -255,9 +267,9 @@ main {
 }
 
 #globalSearch:focus {
-  background: rgba(59,130,246,0.08);
+  background: rgba(220,38,38,0.06);
   border-color: var(--accent);
-  box-shadow: 0 0 0 4px rgba(59,130,246,0.15), var(--shadow-glow);
+  box-shadow: 0 0 0 4px rgba(220,38,38,0.15), var(--shadow-glow);
 }
 
 /* Search results dropdown */
@@ -296,7 +308,7 @@ main {
 
 .search-result-item:hover,
 .search-result-item.highlighted {
-  background: rgba(59,130,246,0.14);
+  background: rgba(220,38,38,0.12);
 }
 
 .search-result-floor {
@@ -395,7 +407,7 @@ main {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, #7f1d1d 100%);
   opacity: 0;
   transition: opacity var(--transition);
 }
@@ -411,15 +423,15 @@ main {
 .floor-btn:hover::before { opacity: 1; }
 
 .floor-btn.basement {
-  background: #1e293b;
-  border-color: #334155;
-  color: #94a3b8;
+  background: #0f172a;
+  border-color: #1e3a5f;
+  color: #93c5fd;
 }
 
 .floor-btn.ground {
-  background: #0f2027;
-  border-color: #0f766e;
-  color: #2dd4bf;
+  background: #1a0808;
+  border-color: #7f1d1d;
+  color: #fca5a5;
 }
 
 .building-info {
@@ -503,6 +515,11 @@ main {
   overflow: auto;
   touch-action: pan-x pan-y;
   cursor: grab;
+  /* White background so dark SVG strokes/labels are always visible */
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  border: 1.5px solid rgba(220,38,38,0.25);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.35);
 }
 
 .svg-map-inner:active { cursor: grabbing; }
@@ -515,11 +532,11 @@ main {
 }
 
 /* SVG room colouring — applied to SVG groups/rects/paths by class */
-.svg-map-inner svg .room-office  { fill: rgba(30,64,175,0.32); stroke: #3b82f6; }
-.svg-map-inner svg .room-lab     { fill: rgba(6,95,70,0.32);  stroke: #10b981; }
-.svg-map-inner svg .room-study   { fill: rgba(120,53,15,0.32); stroke: #f59e0b; }
-.svg-map-inner svg .room-utility { fill: rgba(76,29,149,0.32); stroke: #8b5cf6; }
-.svg-map-inner svg .room-social  { fill: rgba(157,23,77,0.32); stroke: #ec4899; }
+.svg-map-inner svg .room-office  { fill: rgba(29,78,216,0.28);  stroke: #3b82f6; }
+.svg-map-inner svg .room-lab     { fill: rgba(6,95,70,0.28);    stroke: #10b981; }
+.svg-map-inner svg .room-study   { fill: rgba(146,64,14,0.28);  stroke: #f59e0b; }
+.svg-map-inner svg .room-utility { fill: rgba(107,33,168,0.28); stroke: #a78bfa; }
+.svg-map-inner svg .room-social  { fill: rgba(159,18,57,0.30);  stroke: #ef4444; }
 
 .map-legend {
   display: flex;
@@ -546,8 +563,8 @@ main {
 .legend-dot.office  { background: #3b82f6; }
 .legend-dot.lab     { background: #10b981; }
 .legend-dot.study   { background: #f59e0b; }
-.legend-dot.utility { background: #8b5cf6; }
-.legend-dot.social  { background: #ec4899; }
+.legend-dot.utility { background: #a78bfa; }
+.legend-dot.social  { background: #ef4444; }
 
 /* SVG "coming soon" banner */
 .map-coming-soon {
@@ -579,7 +596,7 @@ main {
 }
 
 .room-table th {
-  background: rgba(59,130,246,0.15);
+  background: rgba(220,38,38,0.14);
   color: var(--text-secondary);
   padding: 13px 16px;
   text-align: left;
@@ -607,7 +624,7 @@ main {
 }
 
 .clickable-row:hover {
-  background: rgba(59,130,246,0.08) !important;
+  background: rgba(220,38,38,0.08) !important;
 }
 
 .room-table a {
@@ -751,7 +768,7 @@ main {
 }
 
 .floor-heading {
-  background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(6,182,212,0.1));
+  background: linear-gradient(135deg, rgba(220,38,38,0.2), rgba(29,78,216,0.12));
   border: 1px solid var(--border-accent);
   color: var(--text-primary);
   padding: 12px 20px;
@@ -821,14 +838,14 @@ main {
 
 /* Highlighted card (from SVG click or search) */
 .direction-card.highlighted {
-  border-left-color: #06b6d4;
-  background: rgba(6,182,212,0.07);
+  border-left-color: #1d4ed8;
+  background: rgba(29,78,216,0.08);
   animation: pulse-highlight 1.5s ease-out;
 }
 
 @keyframes pulse-highlight {
-  0%   { box-shadow: 0 0 0 0 rgba(6,182,212,0.5); }
-  50%  { box-shadow: 0 0 0 10px rgba(6,182,212,0); }
+  0%   { box-shadow: 0 0 0 0 rgba(29,78,216,0.55); }
+  50%  { box-shadow: 0 0 0 10px rgba(29,78,216,0); }
   100% { box-shadow: none; }
 }
 
@@ -893,7 +910,7 @@ main {
   cursor: pointer;
   transition: all var(--transition);
   appearance: none;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2360a5fa' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ef4444' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right 14px center;
   background-size: 16px;
@@ -904,7 +921,7 @@ main {
 #roomSelect:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+  box-shadow: 0 0 0 3px rgba(220,38,38,0.2);
 }
 
 #roomSelect option {
@@ -918,7 +935,7 @@ main {
 footer {
   text-align: center;
   padding: 1.5rem;
-  background: rgba(7,9,15,0.98);
+  background: rgba(6,8,16,0.98);
   border-top: 1px solid var(--border);
   color: var(--text-muted);
   font-size: 0.82rem;
@@ -945,7 +962,7 @@ footer {
   max-width: 90%;
   max-height: 90%;
   border-radius: var(--radius-md);
-  box-shadow: 0 0 60px rgba(59,130,246,0.2);
+  box-shadow: 0 0 60px rgba(220,38,38,0.25);
 }
 
 .lightbox .close {
