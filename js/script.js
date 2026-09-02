@@ -294,6 +294,18 @@ function initFadeIn() {
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 }
 
+// ─── STICKY COMPACT HEADER ────────────────────────────────────────
+function initStickyHeader() {
+  const header = document.querySelector('header');
+  if (!header) return;
+  const THRESHOLD = 60; // px scrolled before compacting
+  function onScroll() {
+    header.classList.toggle('scrolled', window.scrollY > THRESHOLD);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll(); // run once on load in case page is already scrolled
+}
+
 // ─── BOOT ─────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initSearch();
@@ -301,4 +313,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initAnchorHighlight();
   initLightbox();
   initFadeIn();
+  initStickyHeader();
 });
