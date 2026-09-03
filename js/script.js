@@ -157,8 +157,10 @@ function initSearch() {
       results.classList.add('open');
       return;
     }
+    const isSubdir = window.location.pathname.includes('/floors/') || window.location.pathname.includes('\\floors\\');
+    const targetBase = isSubdir ? '../directions.html' : './directions.html';
     results.innerHTML = items.slice(0, 12).map((r, i) => `
-      <a class="search-result-item" href="${r.anchor}" data-idx="${i}">
+      <a class="search-result-item" href="${targetBase}#${r.id}" data-idx="${i}">
         <span class="search-result-floor ${r.floorClass || ''}">${floorLabel(r)}</span>
         <div class="search-result-info">
           <div class="search-result-name">${r.name}</div>
