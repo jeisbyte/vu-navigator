@@ -74,69 +74,88 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* --- Front page stylish background --- */
+body.home-page {
+  background: 
+    linear-gradient(180deg, 
+      rgba(6, 8, 16, 0.72) 0%, 
+      rgba(10, 15, 30, 0.82) 28%, 
+      rgba(6, 8, 16, 0.93) 65%, 
+      rgba(6, 8, 16, 0.98) 100%
+    ),
+    url('../images/vu-building.jpg') center top / cover no-repeat fixed;
+  background-attachment: fixed;
+}
+
+body.home-page .hero-search-section {
+  background: rgba(15, 23, 41, 0.68);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+body.home-page .floor-btn {
+  background: rgba(15, 23, 41, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.home-page .building-info {
+  background: rgba(10, 15, 30, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
 /* =============================================
    HEADER
    ============================================= */
 header {
-  background: rgba(6, 8, 16, 0.97);
+  background: rgba(6, 8, 16, 0.88);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
-  padding: 1.25rem 2rem;
+  padding: 1.1rem 1.5rem;
   text-align: center;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 1px 0 var(--border), 0 4px 24px rgba(0, 0, 0, 0.6);
-  transition: padding var(--transition), box-shadow var(--transition);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+  transition: background-color var(--transition), box-shadow var(--transition);
 }
 
-/* Compact header when user scrolls down */
+/* Subtle elevation when user scrolls down - without layout shifts/snapping */
 header.scrolled {
-  padding: 0.6rem 2rem;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
-}
-
-header.scrolled .header-logo {
-  display: none;
-}
-
-header.scrolled h2 {
-  display: none;
-}
-
-header.scrolled h1 {
-  font-size: 1.1rem;
-  margin-bottom: 0;
-}
-
-header.scrolled .floor-nav {
-  margin-top: 6px;
+  background: rgba(6, 8, 16, 0.98);
+  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.75);
 }
 
 header h1 {
-  font-size: clamp(1.35rem, 4vw, 1.9rem);
+  font-size: clamp(1.25rem, 3.5vw, 1.8rem);
   font-weight: 800;
   letter-spacing: -0.02em;
   background: linear-gradient(135deg, #ffffff 30%, var(--accent-vivid) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.15rem;
 }
 
 header h2 {
-  font-size: 0.85rem;
-  font-weight: 500;
+  font-size: 0.82rem;
+  font-weight: 600;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Floor navigation pills */
 .floor-nav {
-  margin-top: 12px;
+  margin-top: 8px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -162,26 +181,6 @@ header h2 {
   color: white;
   border-color: var(--accent);
   box-shadow: var(--shadow-glow);
-}
-
-/* Header logo */
-.header-logo {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.logo-img {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--border-accent);
-  box-shadow: var(--shadow-glow);
-  transition: transform var(--transition);
-}
-
-.logo-img:hover {
-  transform: scale(1.06);
 }
 
 /* Back / directions nav link */
