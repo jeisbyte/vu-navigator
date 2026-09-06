@@ -638,10 +638,17 @@ main {
   flex-shrink: 0;
 }
 
-.legend-dot.office  { background: #3b82f6; }
-.legend-dot.lab     { background: #10b981; }
-.legend-dot.study   { background: #f59e0b; }
-.legend-dot.utility { background: #a78bfa; }
+.legend-dot.toilets,
+.legend-dot.toilet   { background: #22c55e; }
+.legend-dot.rooms,
+.legend-dot.room     { background: #38bdf8; }
+.legend-dot.elevators,
+.legend-dot.elevator { background: #c084fc; }
+
+.legend-dot.office  { background: #38bdf8; }
+.legend-dot.lab     { background: #22c55e; }
+.legend-dot.study   { background: #38bdf8; }
+.legend-dot.utility { background: #c084fc; }
 .legend-dot.social  { background: #ef4444; }
 
 /* SVG "coming soon" banner */
@@ -1058,12 +1065,16 @@ main {
    ============================================= */
 footer {
   text-align: center;
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
   background: rgba(6,8,16,0.98);
   border-top: 1px solid var(--border);
   color: var(--text-muted);
   font-size: 0.82rem;
   margin-top: auto;
+}
+
+footer .building-info {
+  margin: 0 auto 1.5rem;
 }
 
 /* =============================================
