@@ -240,13 +240,38 @@ function initToggle() {
 }
 
 // ─── HIGHLIGHT CARD ON ANCHOR NAVIGATION ─────────────────────────
+let _activeHighlight = null;
+let _highlightObserver = null;
+
 function triggerHighlight(hash) {
   if (!hash) return;
   const target = document.querySelector(hash);
   if (target && target.classList.contains('direction-card')) {
+    // Remove any previous highlight
+    if (_activeHighlight && _activeHighlight !== target) {
+      _activeHighlight.classList.remove('highlighted');
+    }
+    if (_highlightObserver) {
+      _highlightObserver.disconnect();
+      _highlightObserver = null;
+    }
+
     target.classList.add('highlighted');
     target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    setTimeout(() => target.classList.remove('highlighted'), 3500);
+    _activeHighlight = target;
+
+    // Remove highlight only when the card scrolls out of view
+    _highlightObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          target.classList.remove('highlighted');
+          _highlightObserver.disconnect();
+          _highlightObserver = null;
+          _activeHighlight = null;
+        }
+      });
+    }, { threshold: 0.05 });
+    _highlightObserver.observe(target);
   }
 }
 
@@ -319,6 +344,29 @@ function initStickyHeader() {
   onScroll(); // run once on load in case page is already scrolled
 }
 
+// ─── BACK TO TOP BUTTON ───────────────────────────────────────────
+function initBackToTop() {
+  // Create the button
+  const btn = document.createElement('button');
+  btn.id = 'back-to-top';
+  btn.setAttribute('aria-label', 'Back to top');
+  btn.innerHTML = '↑';
+  document.body.appendChild(btn);
+
+  // Show/hide based on scroll position
+  const SHOW_THRESHOLD = 400;
+  function onScroll() {
+    btn.classList.toggle('visible', window.scrollY > SHOW_THRESHOLD);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Scroll to top on click
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
 // ─── BOOT ─────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initSearch();
@@ -327,4 +375,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initLightbox();
   initFadeIn();
   initStickyHeader();
+  initBackToTop();
 });

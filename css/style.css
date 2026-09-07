@@ -1035,13 +1035,13 @@ body.home-page {
   border-left-color: var(--vu-blue);
   background: var(--vu-blue-light);
   box-shadow: 0 0 0 3px rgba(0, 160, 223, 0.35);
-  animation: pulse-card 1.5s ease-out;
+  animation: pulse-card 1.2s ease-out forwards;
 }
 
 @keyframes pulse-card {
-  0%   { box-shadow: 0 0 0 0 rgba(0, 160, 223, 0.6); }
-  50%  { box-shadow: 0 0 0 10px rgba(0, 160, 223, 0); }
-  100% { box-shadow: 0 0 0 3px rgba(0, 160, 223, 0.35); }
+  0%   { box-shadow: 0 0 0 0 rgba(0, 160, 223, 0.7); background: #e0f4ff; }
+  60%  { box-shadow: 0 0 0 10px rgba(0, 160, 223, 0); background: var(--vu-blue-light); }
+  100% { box-shadow: 0 0 0 3px rgba(0, 160, 223, 0.35); background: var(--vu-blue-light); }
 }
 
 /* ==========================================================================
@@ -1154,6 +1154,15 @@ body.home-page {
   flex-shrink: 0;
 }
 
+/* SVG Map Legend — colours match actual SVG fills */
+/* light purple = rgba(199,125,255,0.4) → Elevator */
+/* green        = rgba(0,255,16,0.4)   → Toilets   */
+/* light blue   = rgba(0,201,167,0.4)  → All rooms */
+.legend-dot.elevator { background: rgba(199, 125, 255, 0.75); border: 1px solid #b06ee0; }
+.legend-dot.toilets  { background: rgba(0, 210, 30, 0.75);  border: 1px solid #00a010; }
+.legend-dot.rooms    { background: rgba(0, 190, 160, 0.75); border: 1px solid #009b84; }
+
+/* Keep old classes for any pages still using them (deprecated) */
 .legend-dot.office  { background: #1b365d; }
 .legend-dot.study   { background: #d97706; }
 .legend-dot.lab     { background: #059669; }
@@ -1950,5 +1959,59 @@ footer:not(.site-footer) {
 
   .brand-subtitle {
     font-size: 0.68rem;
+  }
+}
+
+/* ==========================================================================
+   BACK TO TOP BUTTON
+   ========================================================================== */
+#back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9999;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--vu-navy);
+  color: #ffffff;
+  border: none;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity 0.28s ease, transform 0.28s ease, background 0.18s ease;
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+#back-to-top:hover {
+  background: var(--vu-blue);
+  box-shadow: 0 6px 24px rgba(0, 160, 223, 0.45);
+  transform: translateY(-2px);
+}
+
+#back-to-top:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  #back-to-top {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 42px;
+    height: 42px;
+    font-size: 1.15rem;
   }
 }
