@@ -124,7 +124,7 @@ const ROOM_DB = [
   // Floor 9
   { id:'cafeteria',     room:'901', name:'Cafeteria',          floor:'9', anchor:'../directions.html#cafeteria' },
   { id:'room-902',      room:'902', name:'Library',            floor:'9', anchor:'../directions.html#room-902' },
-  { id:'computer-lab-2',room:'903', name:'Editing Suite',      floor:'9', anchor:'../directions.html#computer-lab-2' },
+  { id:'computer-lab-2',room:'903', name:'Editing Suite/ Computer lab 2', aliases:['Editting Suite/ Computer lab 2', 'Editing Suite', 'Editting Suite', 'Computer Lab 2', 'Computer lab 2'], floor:'9', anchor:'../directions.html#computer-lab-2' },
   { id:'room-904',      room:'904', name:'IT Room',            floor:'9', anchor:'../directions.html#room-904' },
   { id:'room-905',      room:'905', name:'Silent Room 1',      floor:'9', anchor:'../directions.html#room-905' },
   { id:'room-906',      room:'906', name:'Silent Room 2',      floor:'9', anchor:'../directions.html#room-906' },
@@ -174,11 +174,14 @@ function initSearch() {
   input.addEventListener('input', () => {
     const q = input.value.trim().toLowerCase();
     if (!q) { results.classList.remove('open'); return; }
+    const qNorm = q.replace(/tt/g, 't');
     const matches = ROOM_DB.filter(r =>
       r.name.toLowerCase().includes(q) ||
+      r.name.toLowerCase().replace(/tt/g, 't').includes(qNorm) ||
       r.room.toLowerCase().includes(q) ||
       r.floor.toLowerCase().includes(q) ||
-      r.id.toLowerCase().includes(q)
+      r.id.toLowerCase().includes(q) ||
+      (r.aliases && r.aliases.some(a => a.toLowerCase().includes(q) || a.toLowerCase().replace(/tt/g, 't').includes(qNorm)))
     );
     render(matches);
   });
