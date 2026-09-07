@@ -1,51 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Floor 4 - VU Navigator</title>
-    <link rel="icon" type="image/jpeg" href="../images/vu-logo.jpg">
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Floor 4 – Victoria University Tower Navigator</title>
+  <meta name="description" content="Floor 4 – Department of Pharmacy (under development) at Victoria University Tower.">
+  <link rel="icon" type="image/jpeg" href="../images/vu-logo.jpg">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/script.js" defer></script>
 </head>
-
 <body>
-    <header>
-        <h1>📍 Floor 4</h1>
-        <nav class="floor-nav">
-      <a href="../index.html">🏠 Home</a>
-            <a href="./floor-b2.html">B2</a>
-            <a href="./floor-b1.html">B1</a>
-            <a href="./floor-g.html">G</a>
-            <a href="./floor-1.html">1</a>
-            <a href="./floor-2.html">2</a>
-            <a href="./floor-3.html">3</a>
-            <a href="./floor-4.html" class="active">4</a>
-            <a href="./floor-5.html">5</a>
-            <a href="./floor-6.html">6</a>
-            <a href="./floor-7.html">7</a>
-            <a href="./floor-8.html">8</a>
-            <a href="./floor-9.html">9</a>
-        </nav>
-    </header>
-    <main>
-        <div class="back-link">
-            <a href="./floor-3.html">⬅️ Floor 3</a>
-            <a href="./floor-5.html">Floor 5 ➡️</a>
+  <!-- ── OFFICIAL INSTITUTIONAL HEADER ── -->
+  <header>
+    <div class="header-inner">
+      <a href="../index.html" class="header-brand" aria-label="Victoria University Tower Navigator Home">
+        <img src="../images/vu-logo.jpg" alt="Victoria University Logo" class="brand-logo">
+        <div class="brand-info">
+          <span class="brand-title">Victoria University</span>
+          <span class="brand-subtitle">Tower Navigator · Market Plaza</span>
         </div>
-        <h2>Rooms on Floor 4</h2>
-        <p><strong>Department Of Pharmacy</strong> – under construction.</p>
-        <div class="room-cards">
-            <div class="room-card">
-                <h3>Pharmacy Department</h3>
-                <p>Status: Under construction</p>
-            </div>
-        </div>
-    </main>
-    <footer>
-        <p>Real Life Project - Semester 1 | Victoria University</p>
-    </footer>
-</body>
+      </a>
+      <nav class="site-nav" aria-label="Primary Site Navigation">
+        <a href="../index.html">Home</a>
+        <a href="../directions.html">Rooms &amp; Directions</a>
+        <a href="../new-student-guide.html">New Student Guide</a>
+        <a href="../facilities.html">Facilities</a>
+        <a href="../about.html">About Us</a>
+      </nav>
+    </div>
+  </header>
 
+  <!-- ── DEDICATED FLOOR SELECTOR SUBNAV ── -->
+  <div class="floor-subnav-wrapper">
+    <div class="floor-subnav">
+      <span class="floor-subnav-label">Select Floor:</span>
+      <a href="./floor-b2.html">B2</a>
+      <a href="./floor-b1.html">B1</a>
+      <a href="./floor-g.html">Ground</a>
+      <a href="./floor-1.html">Floor 1</a>
+      <a href="./floor-2.html">Floor 2</a>
+      <a href="./floor-3.html">Floor 3</a>
+      <a href="./floor-4.html" class="active">Floor 4</a>
+      <a href="./floor-5.html">Floor 5</a>
+      <a href="./floor-6.html">Floor 6</a>
+      <a href="./floor-7.html">Floor 7</a>
+      <a href="./floor-8.html">Floor 8</a>
+      <a href="./floor-9.html">Floor 9</a>
+    </div>
+  </div>
+
+  <main>
+    <div class="back-link">
+      <a href="./floor-3.html">&larr; Floor 3</a>
+      <a href="./floor-5.html">Floor 5 &rarr;</a>
+    </div>
+
+    <div class="map-coming-soon">
+      <div class="cs-icon">🏗️</div>
+      <h3>Department of Pharmacy</h3>
+      <p>Floor 4 is currently undergoing renovation and laboratory outfitting.</p>
+      <p style="margin-top:0.5rem; color:var(--text-muted); font-size:0.86rem;">For Pharmacy inquiries, please contact the H.O.D Pharmacy office on Floor 3 (Room 305) or the Dean's Office.</p>
+    </div>
+
+    <div class="room-cards">
+      <div class="room-card">
+        <h3>Department of Pharmacy</h3>
+        <p>Status: Under active facility upgrade</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ── OFFICIAL INSTITUTIONAL FOOTER ── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-brand-header">
+          <img src="../images/vu-logo.jpg" alt="Victoria University Logo" class="footer-logo">
+          <div>
+            <h3>Victoria University</h3>
+            <span class="footer-tagline">The University of YOU</span>
+          </div>
+        </div>
+        <p>An official digital campus navigation portal for Victoria University students, faculty, staff and visitors at Market Plaza Tower.</p>
+        <p style="font-size:0.8rem; color:#94a3b8;">Victoria Towers, Plot 1-13 Jinja Road, Kampala, Uganda</p>
+      </div>
+      <div class="footer-column">
+        <h4>Navigation</h4>
+        <a href="../index.html">Campus Home</a>
+        <a href="../directions.html">Rooms &amp; Directions</a>
+        <a href="../new-student-guide.html">New Student Guide</a>
+        <a href="../facilities.html">Campus Facilities</a>
+        <a href="../about.html">About VU Navigator</a>
+      </div>
+      <div class="footer-column">
+        <h4>Key Locations</h4>
+        <a href="../directions.html#reception">Main Reception (Ground)</a>
+        <a href="../directions.html#room-902">University Library (Floor 9)</a>
+        <a href="../directions.html#cafeteria">Cafeteria (Floor 9)</a>
+        <a href="../directions.html#ICT-Lab-1">ICT Computer Labs (Floor 2)</a>
+        <a href="../directions.html#sick-bay">Sick Bay &amp; Health (Floor 3)</a>
+      </div>
+      <div class="footer-column">
+        <h4>Campus Assistance</h4>
+        <p>Need help locating an office, lecture room, or laboratory?</p>
+        <p>Use the live room search or check step-by-step walking guides.</p>
+        <a class="footer-cta" href="../directions.html">Start Navigating &rarr;</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Victoria University Uganda. All Rights Reserved.</span>
+      <span>Victoria University Tower Navigator · Market Plaza</span>
+    </div>
+  </footer>
+</body>
 </html>

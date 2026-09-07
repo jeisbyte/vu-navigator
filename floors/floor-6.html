@@ -3,42 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Floor 6 – VU Tower Navigator</title>
+  <title>Floor 6 – Victoria University Tower Navigator</title>
   <meta name="description" content="Floor 6 map and room list for VU Tower. Study rooms, Computer Lab, Server Room, Guild Office, and Dean Institute of Education.">
   <link rel="icon" type="image/jpeg" href="../images/vu-logo.jpg">
   <link rel="stylesheet" href="../css/style.css">
   <script src="../js/script.js" defer></script>
 </head>
 <body>
+  <!-- ── OFFICIAL INSTITUTIONAL HEADER ── -->
   <header>
-    <h1>📍 Floor 6</h1>
-    <nav class="floor-nav">
-      <a href="../index.html">🏠 Home</a>
+    <div class="header-inner">
+      <a href="../index.html" class="header-brand" aria-label="Victoria University Tower Navigator Home">
+        <img src="../images/vu-logo.jpg" alt="Victoria University Logo" class="brand-logo">
+        <div class="brand-info">
+          <span class="brand-title">Victoria University</span>
+          <span class="brand-subtitle">Tower Navigator · Market Plaza</span>
+        </div>
+      </a>
+      <nav class="site-nav" aria-label="Primary Site Navigation">
+        <a href="../index.html">Home</a>
+        <a href="../directions.html">Rooms &amp; Directions</a>
+        <a href="../new-student-guide.html">New Student Guide</a>
+        <a href="../facilities.html">Facilities</a>
+        <a href="../about.html">About Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ── DEDICATED FLOOR SELECTOR SUBNAV ── -->
+  <div class="floor-subnav-wrapper">
+    <div class="floor-subnav">
+      <span class="floor-subnav-label">Select Floor:</span>
       <a href="./floor-b2.html">B2</a>
       <a href="./floor-b1.html">B1</a>
-      <a href="./floor-g.html">G</a>
-      <a href="./floor-1.html">1</a>
-      <a href="./floor-2.html">2</a>
-      <a href="./floor-3.html">3</a>
-      <a href="./floor-4.html">4</a>
-      <a href="./floor-5.html">5</a>
-      <a href="./floor-6.html" class="active">6</a>
-      <a href="./floor-7.html">7</a>
-      <a href="./floor-8.html">8</a>
-      <a href="./floor-9.html">9</a>
-    </nav>
-  </header>
+      <a href="./floor-g.html">Ground</a>
+      <a href="./floor-1.html">Floor 1</a>
+      <a href="./floor-2.html">Floor 2</a>
+      <a href="./floor-3.html">Floor 3</a>
+      <a href="./floor-4.html">Floor 4</a>
+      <a href="./floor-5.html">Floor 5</a>
+      <a href="./floor-6.html" class="active">Floor 6</a>
+      <a href="./floor-7.html">Floor 7</a>
+      <a href="./floor-8.html">Floor 8</a>
+      <a href="./floor-9.html">Floor 9</a>
+    </div>
+  </div>
 
   <main>
     <div class="back-link">
-      <a href="./floor-5.html">⬅️ Floor 5</a>
-      <a href="./floor-7.html">Floor 7 ➡️</a>
+      <a href="./floor-5.html">&larr; Floor 5</a>
+      <a href="./floor-7.html">Floor 7 &rarr;</a>
     </div>
 
     <section class="floor-plan-section" id="floor-plan-section-6">
       <div class="floor-plan-toggle">
-        <button class="toggle-btn active" data-view="map" id="map-btn-6">🗺️ Map</button>
-        <button class="toggle-btn" data-view="list" id="list-btn-6">📋 List</button>
+        <button class="toggle-btn active" data-view="map" id="map-btn-6">Map View</button>
+        <button class="toggle-btn" data-view="list" id="list-btn-6">Room List</button>
       </div>
 
       <div class="svg-map-container" id="svg-map-6">
@@ -53,7 +73,7 @@
       </div>
 
       <div class="list-view hidden" id="list-6">
-        <h2 style="margin-bottom:1rem;font-size:1rem;color:var(--text-secondary)">Rooms on Floor 6</h2>
+        <h2 style="margin-bottom:1rem;font-size:1.1rem;font-weight:700;color:var(--vu-navy)">Rooms on Floor 6</h2>
         <table class="room-table">
           <thead><tr><th>Room No.</th><th>Room Name</th><th>Department</th><th>Purpose</th></tr></thead>
           <tbody>
@@ -109,6 +129,47 @@
     </section>
   </main>
 
-  <footer><p>Real Life Project – Semester 1 | Victoria University</p></footer>
+  <!-- ── OFFICIAL INSTITUTIONAL FOOTER ── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-brand-header">
+          <img src="../images/vu-logo.jpg" alt="Victoria University Logo" class="footer-logo">
+          <div>
+            <h3>Victoria University</h3>
+            <span class="footer-tagline">The University of YOU</span>
+          </div>
+        </div>
+        <p>An official digital campus navigation portal for Victoria University students, faculty, staff and visitors at Market Plaza Tower.</p>
+        <p style="font-size:0.8rem; color:#94a3b8;">Victoria Towers, Plot 1-13 Jinja Road, Kampala, Uganda</p>
+      </div>
+      <div class="footer-column">
+        <h4>Navigation</h4>
+        <a href="../index.html">Campus Home</a>
+        <a href="../directions.html">Rooms &amp; Directions</a>
+        <a href="../new-student-guide.html">New Student Guide</a>
+        <a href="../facilities.html">Campus Facilities</a>
+        <a href="../about.html">About VU Navigator</a>
+      </div>
+      <div class="footer-column">
+        <h4>Key Locations</h4>
+        <a href="../directions.html#reception">Main Reception (Ground)</a>
+        <a href="../directions.html#room-902">University Library (Floor 9)</a>
+        <a href="../directions.html#cafeteria">Cafeteria (Floor 9)</a>
+        <a href="../directions.html#ICT-Lab-1">ICT Computer Labs (Floor 2)</a>
+        <a href="../directions.html#sick-bay">Sick Bay &amp; Health (Floor 3)</a>
+      </div>
+      <div class="footer-column">
+        <h4>Campus Assistance</h4>
+        <p>Need help locating an office, lecture room, or laboratory?</p>
+        <p>Use the live room search or check step-by-step walking guides.</p>
+        <a class="footer-cta" href="../directions.html">Start Navigating &rarr;</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Victoria University Uganda. All Rights Reserved.</span>
+      <span>Victoria University Tower Navigator · Market Plaza</span>
+    </div>
+  </footer>
 </body>
 </html>

@@ -4,33 +4,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VU Tower Navigator – Victoria University</title>
-  <meta name="description" content="Navigate Victoria University Tower at Market Plaza. Find any room instantly with our interactive floor plan and search tool.">
+  <title>Victoria University Tower Navigator – Floor Directory</title>
+  <meta name="description" content="Official Victoria University campus floor directory for Market Plaza Tower. Find any room or floor plan instantly.">
   <link rel="icon" type="image/jpeg" href="../images/vu-logo.jpg">
   <link rel="stylesheet" href="../css/style.css">
   <script src="../js/script.js" defer></script>
 </head>
 
 <body class="home-page">
+  <!-- ── OFFICIAL INSTITUTIONAL HEADER ── -->
   <header>
-    <h1>🏛️ Victoria University Tower Navigator</h1>
-    <h2>Market Plaza</h2>
-    <nav class="floor-nav">
-      <a href="../directions.html">🧭 Rooms &amp; Directions</a>
-    </nav>
+    <div class="header-inner">
+      <a href="../index.html" class="header-brand" aria-label="Victoria University Tower Navigator Home">
+        <img src="../images/vu-logo.jpg" alt="Victoria University Logo" class="brand-logo">
+        <div class="brand-info">
+          <span class="brand-title">Victoria University</span>
+          <span class="brand-subtitle">Tower Navigator · Market Plaza</span>
+        </div>
+      </a>
+      <nav class="site-nav" aria-label="Primary Site Navigation">
+        <a href="../index.html">Home</a>
+        <a href="../directions.html">Rooms &amp; Directions</a>
+        <a href="../new-student-guide.html">New Student Guide</a>
+        <a href="../facilities.html">Facilities</a>
+        <a href="../about.html">About Us</a>
+      </nav>
+    </div>
   </header>
 
   <main>
     <!-- ── HERO SEARCH ── -->
     <section class="hero-search-section" aria-label="Room search">
-      <p class="hero-title">Find Your Room</p>
-      <p class="hero-subtitle">Type a room number or name — we'll take you straight there.</p>
+      <div class="hero-badge">Official Campus Navigation Portal</div>
+      <h1 class="hero-title">Find Your Destination</h1>
+      <p class="hero-subtitle">Type a room number or department name — we'll take you straight to its floor plan and walking directions.</p>
       <div class="search-wrapper">
         <span class="search-icon">🔍</span>
         <input
           type="search"
           id="globalSearch"
-          placeholder="e.g. Dance Studio, B107, Cafeteria, 302…"
+          placeholder="Search by room (e.g. 202, B107, 301) or facility (Cafeteria, Library)..."
           autocomplete="off"
           aria-label="Search rooms"
           spellcheck="false"
@@ -41,32 +54,111 @@
 
     <!-- ── FLOOR GRID ── -->
     <div class="floor-selector">
-      <h2>— Or Select a Floor —</h2>
+      <div class="floor-selector-header">
+        <h2>Select a Floor to Explore</h2>
+        <p class="floor-selector-desc">Choose any level to open interactive SVG floor plans and room rosters</p>
+      </div>
       <div class="floor-grid">
-        <a href="./floor-b2.html" class="floor-btn basement" id="btn-b2" aria-label="Basement 2"><span>B2</span></a>
-        <a href="./floor-b1.html" class="floor-btn basement" id="btn-b1" aria-label="Basement 1"><span>B1</span></a>
-        <a href="./floor-g.html"  class="floor-btn ground"   id="btn-g"  aria-label="Ground Floor"><span>G</span></a>
-        <a href="./floor-1.html"  class="floor-btn"          id="btn-1"  aria-label="Floor 1"><span>1</span></a>
-        <a href="./floor-2.html"  class="floor-btn"          id="btn-2"  aria-label="Floor 2"><span>2</span></a>
-        <a href="./floor-3.html"  class="floor-btn"          id="btn-3"  aria-label="Floor 3"><span>3</span></a>
-        <a href="./floor-4.html"  class="floor-btn"          id="btn-4"  aria-label="Floor 4"><span>4</span></a>
-        <a href="./floor-5.html"  class="floor-btn"          id="btn-5"  aria-label="Floor 5"><span>5</span></a>
-        <a href="./floor-6.html"  class="floor-btn"          id="btn-6"  aria-label="Floor 6"><span>6</span></a>
-        <a href="./floor-7.html"  class="floor-btn"          id="btn-7"  aria-label="Floor 7"><span>7</span></a>
-        <a href="./floor-8.html"  class="floor-btn"          id="btn-8"  aria-label="Floor 8"><span>8</span></a>
-        <a href="./floor-9.html"  class="floor-btn"          id="btn-9"  aria-label="Floor 9"><span>9</span></a>
+        <a href="./floor-b2.html" class="floor-btn basement" id="btn-b2" aria-label="Basement 2">
+          <span class="floor-number">B2</span>
+          <span class="floor-tag">Basement 2</span>
+        </a>
+        <a href="./floor-b1.html" class="floor-btn basement" id="btn-b1" aria-label="Basement 1">
+          <span class="floor-number">B1</span>
+          <span class="floor-tag">Basement 1</span>
+        </a>
+        <a href="./floor-g.html"  class="floor-btn ground"   id="btn-g"  aria-label="Ground Floor">
+          <span class="floor-number">G</span>
+          <span class="floor-tag">Main Entrance</span>
+        </a>
+        <a href="./floor-1.html"  class="floor-btn"          id="btn-1"  aria-label="Floor 1">
+          <span class="floor-number">1</span>
+          <span class="floor-tag">Floor 1</span>
+        </a>
+        <a href="./floor-2.html"  class="floor-btn"          id="btn-2"  aria-label="Floor 2">
+          <span class="floor-number">2</span>
+          <span class="floor-tag">Floor 2</span>
+        </a>
+        <a href="./floor-3.html"  class="floor-btn"          id="btn-3"  aria-label="Floor 3">
+          <span class="floor-number">3</span>
+          <span class="floor-tag">Floor 3</span>
+        </a>
+        <a href="./floor-4.html"  class="floor-btn"          id="btn-4"  aria-label="Floor 4">
+          <span class="floor-number">4</span>
+          <span class="floor-tag">Floor 4</span>
+        </a>
+        <a href="./floor-5.html"  class="floor-btn"          id="btn-5"  aria-label="Floor 5">
+          <span class="floor-number">5</span>
+          <span class="floor-tag">Floor 5</span>
+        </a>
+        <a href="./floor-6.html"  class="floor-btn"          id="btn-6"  aria-label="Floor 6">
+          <span class="floor-number">6</span>
+          <span class="floor-tag">Floor 6</span>
+        </a>
+        <a href="./floor-7.html"  class="floor-btn"          id="btn-7"  aria-label="Floor 7">
+          <span class="floor-number">7</span>
+          <span class="floor-tag">Floor 7</span>
+        </a>
+        <a href="./floor-8.html"  class="floor-btn"          id="btn-8"  aria-label="Floor 8">
+          <span class="floor-number">8</span>
+          <span class="floor-tag">Floor 8</span>
+        </a>
+        <a href="./floor-9.html"  class="floor-btn"          id="btn-9"  aria-label="Floor 9">
+          <span class="floor-number">9</span>
+          <span class="floor-tag">Floor 9</span>
+        </a>
+      </div>
+
+      <div class="building-info">
+        <p>📍 <strong>Main Entrance:</strong> Ground Floor, Market Plaza</p>
+        <p>🛗 <strong>Elevators &amp; Stairs:</strong> Access to all floors B2 through Floor 9</p>
+        <p>🔍 <strong>Room Navigation:</strong> Search room code or click floor for layout map</p>
+        <p>🎓 <strong>Student Inquiries:</strong> Student Support Office on Ground Floor (G02)</p>
       </div>
     </div>
   </main>
 
-  <footer>
-    <div class="building-info">
-      <p>📍 <strong>Main Entrance:</strong> Ground Floor</p>
-      <p>🛗 <strong>Elevators:</strong> Available on all floors</p>
-      <p>🔍 Search above or click a floor to browse rooms and get walking directions.</p>
-      <p>📱 Fully responsive — works on all devices.</p>
+  <!-- ── OFFICIAL INSTITUTIONAL FOOTER ── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-brand-header">
+          <img src="../images/vu-logo.jpg" alt="Victoria University Logo" class="footer-logo">
+          <div>
+            <h3>Victoria University</h3>
+            <span class="footer-tagline">The University of YOU</span>
+          </div>
+        </div>
+        <p>An official digital campus navigation portal for Victoria University students, faculty, staff and visitors at Market Plaza Tower.</p>
+        <p style="font-size:0.8rem; color:#94a3b8;">Victoria Towers, Plot 1-13 Jinja Road, Kampala, Uganda</p>
+      </div>
+      <div class="footer-column">
+        <h4>Navigation</h4>
+        <a href="../index.html">Campus Home</a>
+        <a href="../directions.html">Rooms &amp; Directions</a>
+        <a href="../new-student-guide.html">New Student Guide</a>
+        <a href="../facilities.html">Campus Facilities</a>
+        <a href="../about.html">About VU Navigator</a>
+      </div>
+      <div class="footer-column">
+        <h4>Key Locations</h4>
+        <a href="../directions.html#reception">Main Reception (Ground)</a>
+        <a href="../directions.html#room-902">University Library (Floor 9)</a>
+        <a href="../directions.html#cafeteria">Cafeteria (Floor 9)</a>
+        <a href="../directions.html#ICT-Lab-1">ICT Computer Labs (Floor 2)</a>
+        <a href="../directions.html#sick-bay">Sick Bay &amp; Health (Floor 3)</a>
+      </div>
+      <div class="footer-column">
+        <h4>Campus Assistance</h4>
+        <p>Need help locating an office, lecture room, or laboratory?</p>
+        <p>Use the live room search or check step-by-step walking guides.</p>
+        <a class="footer-cta" href="../directions.html">Start Navigating &rarr;</a>
+      </div>
     </div>
-    <p>Real Life Project – Semester 1 | Victoria University · Market Plaza Tower</p>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Victoria University Uganda. All Rights Reserved.</span>
+      <span>Victoria University Tower Navigator · Market Plaza</span>
+    </div>
   </footer>
 </body>
 

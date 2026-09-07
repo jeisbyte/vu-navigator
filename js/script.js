@@ -205,9 +205,14 @@ function initSearch() {
     }
   });
 
-  // Close when clicking outside
+  // Close when clicking outside or clicking an item
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.search-wrapper')) {
+      results.classList.remove('open');
+    }
+  });
+  results.addEventListener('click', (e) => {
+    if (e.target.closest('.search-result-item')) {
       results.classList.remove('open');
     }
   });
@@ -235,17 +240,23 @@ function initToggle() {
 }
 
 // ─── HIGHLIGHT CARD ON ANCHOR NAVIGATION ─────────────────────────
-function initAnchorHighlight() {
-  const hash = window.location.hash;
+function triggerHighlight(hash) {
   if (!hash) return;
   const target = document.querySelector(hash);
   if (target && target.classList.contains('direction-card')) {
-    setTimeout(() => {
-      target.classList.add('highlighted');
-      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      setTimeout(() => target.classList.remove('highlighted'), 3500);
-    }, 200);
+    target.classList.add('highlighted');
+    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(() => target.classList.remove('highlighted'), 3500);
   }
+}
+
+function initAnchorHighlight() {
+  if (window.location.hash) {
+    setTimeout(() => triggerHighlight(window.location.hash), 200);
+  }
+  window.addEventListener('hashchange', () => {
+    triggerHighlight(window.location.hash);
+  });
 }
 
 // ─── LIGHTBOX ────────────────────────────────────────────────────
@@ -282,7 +293,7 @@ function initLightbox() {
 // ─── SCROLL FADE-IN ───────────────────────────────────────────────
 function initFadeIn() {
   const els = document.querySelectorAll(
-    '.direction-card, .room-card, .floor-heading, .quick-index, .directions-intro, .building-info, .hero-search-section, .floor-grid, .svg-map-container'
+    '.direction-card, .room-card, .floor-heading, .quick-index, .directions-intro, .building-info, .hero-search-section, .floor-grid, .svg-map-container, .quick-actions-section, .action-card, .info-card, .facility-card'
   );
   els.forEach(el => el.classList.add('fade-up'));
   const observer = new IntersectionObserver(entries => {
