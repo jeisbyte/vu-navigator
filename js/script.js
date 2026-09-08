@@ -62,6 +62,9 @@ const ROOM_DB = [
   { id:'room-124', room:'124', name:'Study Room', floor:'1', anchor:'../directions.html#room-124' },
   { id:'room-125', room:'125', name:'Study Room', floor:'1', anchor:'../directions.html#room-125' },
   { id:'room-127', room:'127', name:'Study Room', floor:'1', anchor:'../directions.html#room-127' },
+  { id:'boardroom-1', room:'—', name:'Boardroom 1', aliases:['boardroom 1', 'board room 1', 'room 207', '207'], floor:'1', anchor:'../directions.html#boardroom-1' },
+  { id:'boardroom-2', room:'—', name:'Boardroom 2', aliases:['boardroom 2', 'board room 2', 'room 208', '208'], floor:'1', anchor:'../directions.html#boardroom-2' },
+  { id:'boardroom-3', room:'—', name:'Boardroom 3', aliases:['boardroom 3', 'board room 3', 'room 209', '209'], floor:'1', anchor:'../directions.html#boardroom-3' },
   // Floor 2
   { id:'cosmetic-lab', room:'201', name:'Cosmetic Lab',    floor:'2', anchor:'../directions.html#cosmetic-lab' },
   { id:'ict-lab-1',    room:'202', name:'ICT Lab 1',       floor:'2', anchor:'../directions.html#ICT-Lab-1' },
@@ -69,9 +72,6 @@ const ROOM_DB = [
   { id:'room-204',     room:'204', name:'Study Room',      floor:'2', anchor:'../directions.html#room-204' },
   { id:'room-205',     room:'205', name:'Study Room',      floor:'2', anchor:'../directions.html#room-205' },
   { id:'room-206',     room:'206', name:'Study Room',      floor:'2', anchor:'../directions.html#room-206' },
-  { id:'room-207',     room:'207', name:'Boardroom 1',     floor:'2', anchor:'../directions.html#room-207' },
-  { id:'room-208',     room:'208', name:'Boardroom 2',     floor:'2', anchor:'../directions.html#room-208' },
-  { id:'room-209',     room:'209', name:'Boardroom 3',     floor:'2', anchor:'../directions.html#room-209' },
   { id:'room-210',     room:'210', name:'Storage Room',    floor:'2', anchor:'../directions.html#room-210' },
   // Floor 3
   { id:'room-301', room:'301', name:'Study Room',                    floor:'3', anchor:'../directions.html#room-301' },
@@ -117,7 +117,6 @@ const ROOM_DB = [
   { id:'room-806', room:'8-06', name:'Room 8-06', floor:'8', anchor:'../directions.html#room-806' },
   { id:'room-807', room:'8-07', name:'Room 8-07', floor:'8', anchor:'../directions.html#room-807' },
   { id:'room-808', room:'8-08', name:'Room 8-08', floor:'8', anchor:'../directions.html#room-808' },
-  { id:'room-809', room:'8-09', name:'Room 8-09', floor:'8', anchor:'../directions.html#room-809' },
   { id:'room-810', room:'8-10', name:'Room 8-10', floor:'8', anchor:'../directions.html#room-810' },
   { id:'vice-chancellor',  room:'—', name:"Vice Chancellor's Coordination Office", floor:'8', anchor:'../directions.html#vice-chancellor' },
   { id:'quality-assurance',room:'—', name:'Quality Assurance Office',       floor:'8', anchor:'../directions.html#quality-assurance' },
@@ -371,6 +370,45 @@ function initBackToTop() {
 }
 
 // ─── BOOT ─────────────────────────────────────────────────────────
+// ─── FLOOR MAP LINKS ON DIRECTION CARDS ──────────────────────────
+function initFloorMapLinks() {
+  // Only run on the directions page
+  if (!document.querySelector('.direction-card')) return;
+
+  // Map floor tag labels → floor page URL (relative to directions.html)
+  const FLOOR_PAGES = {
+    'B2':   'floors/floor-b2.html',
+    'B1':   'floors/floor-b1.html',
+    'G':    'floors/floor-g.html',
+    '1':    'floors/floor-1.html',
+    '2':    'floors/floor-2.html',
+    '3':    'floors/floor-3.html',
+    '4':    'floors/floor-4.html',
+    '5':    'floors/floor-5.html',
+    '6':    'floors/floor-6.html',
+    '7':    'floors/floor-7.html',
+    '8':    'floors/floor-8.html',
+    '9':    'floors/floor-9.html',
+  };
+
+  document.querySelectorAll('.direction-card').forEach(card => {
+    // Read the first span in .card-tag which holds the floor label (B2, G, 1, 2 …)
+    const floorLabel = card.querySelector('.card-tag span:first-child')?.textContent.trim();
+    const floorPage  = FLOOR_PAGES[floorLabel];
+    if (!floorPage) return;
+
+    // Don't add a second link if one already exists
+    if (card.querySelector('.card-floor-link')) return;
+
+    const link = document.createElement('a');
+    link.href = floorPage;
+    link.className = 'card-floor-link';
+    link.title = `View Floor ${floorLabel} Map`;
+    link.innerHTML = `<span class="card-floor-link-icon">🗺️</span> View Floor Map`;
+    card.appendChild(link);
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initSearch();
   initToggle();
@@ -379,4 +417,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initFadeIn();
   initStickyHeader();
   initBackToTop();
+  initFloorMapLinks();
 });

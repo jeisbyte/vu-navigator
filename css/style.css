@@ -1125,6 +1125,37 @@ body.home-page {
   100% { box-shadow: 0 0 0 3px rgba(0, 160, 223, 0.35); background: var(--vu-blue-light); }
 }
 
+/* Floor Map Link – bottom-right of each direction card */
+.card-floor-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  align-self: flex-end;
+  margin-top: 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--vu-blue);
+  text-decoration: none;
+  background: var(--vu-blue-light);
+  border: 1px solid var(--vu-blue-border);
+  padding: 0.32rem 0.85rem;
+  border-radius: var(--radius-full);
+  transition: background var(--transition), color var(--transition), transform var(--transition);
+  white-space: nowrap;
+}
+
+.card-floor-link:hover {
+  background: var(--vu-blue);
+  color: #ffffff;
+  border-color: var(--vu-blue);
+  transform: translateY(-1px);
+}
+
+.card-floor-link-icon {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
 /* ==========================================================================
    FLOOR PLAN SVG VIEWER & TOGGLE CONTROLS
    ========================================================================== */
@@ -1555,38 +1586,108 @@ body.home-page {
   font-size: 1.45rem;
   font-weight: 800;
   color: var(--vu-navy);
-  margin: 0.4rem 0 0.85rem;
+  margin: 0.4rem 0 0.4rem;
+}
+
+.content-panel-desc {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  margin-bottom: 1.5rem;
 }
 
 .guide-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.85rem;
-  margin-top: 1.5rem;
+  gap: 1rem;
 }
 
+.guide-office-card,
+.guide-list > a,
 .guide-list > div {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  padding: 1rem 1.25rem;
-  background: var(--bg-subtle);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  padding: 1.1rem 1.25rem;
+  background: #eef6fd;
+  border: 1.5px solid #bae0fb;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition);
+  position: relative;
 }
 
+.guide-office-card:hover,
+.guide-list > a:hover {
+  background: #e0f0fc;
+  border-color: var(--vu-blue);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.guide-office-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  border: 1.5px solid #cce5fb;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+.guide-office-card:hover .guide-office-icon,
+.guide-list > a:hover .guide-office-icon {
+  border-color: var(--vu-blue);
+  transform: scale(1.08);
+}
+
+.guide-office-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.guide-office-title,
 .guide-list strong {
   color: var(--vu-navy);
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.96rem;
+  line-height: 1.3;
+  transition: color var(--transition);
 }
 
+.guide-office-card:hover .guide-office-title,
+.guide-list > a:hover strong {
+  color: var(--vu-blue);
+}
+
+.guide-office-badge,
 .guide-list span {
   color: var(--text-muted);
-  font-size: 0.84rem;
+  font-size: 0.83rem;
   font-weight: 500;
-  text-align: right;
+}
+
+.guide-office-arrow {
+  color: var(--vu-blue);
+  font-size: 1.25rem;
+  font-weight: 700;
+  opacity: 0.5;
+  transition: transform var(--transition), opacity var(--transition);
+  flex-shrink: 0;
+}
+
+.guide-office-card:hover .guide-office-arrow,
+.guide-list > a:hover .guide-office-arrow {
+  opacity: 1;
+  transform: translateX(4px);
 }
 
 .tips-panel {
