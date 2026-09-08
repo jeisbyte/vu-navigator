@@ -27,79 +27,77 @@
                 <a href="facilities.html">Facilities</a>
                 <a href="about.html">About Us</a>
             </nav>
+            <div class="header-search-wrapper">
+                <span class="header-search-icon">🔍</span>
+                <input
+                    type="search"
+                    id="globalSearch"
+                    placeholder="Search room or facility…"
+                    autocomplete="off"
+                    aria-label="Search rooms"
+                    spellcheck="false"
+                >
+                <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+            </div>
         </div>
     </header>
 
     <main>
-        <div class="directions-intro">
-            <p>Type a room below, or click any room name to jump directly to its walking directions from the <strong>main entrance on Ground Floor</strong>.</p>
-        </div>
-
-        <div class="search-wrapper" style="margin-bottom: 2rem;">
-            <span class="search-icon">🔍</span>
-            <input
-                type="search"
-                id="globalSearch"
-                placeholder="Search any room (e.g. 202, B107, 301) or facility (Cafeteria, Library)..."
-                autocomplete="off"
-                aria-label="Search rooms"
-                spellcheck="false"
-            >
-            <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
-        </div>
-
         <div class="quick-index">
             <h2>Jump to a Room (A–Z)</h2>
-            <ul class="index-list">
-                <!-- All named rooms, sorted A–Z -->
-                <li><a href="#anatomy-lab">Anatomy Laboratory</a></li>
-                <li><a href="#art-gallery">Art Gallery</a></li>
-                <li><a href="#art-room">Art Room</a></li>
-                <li><a href="#office-associate-dean">Associate Dean</a></li>
-                <li><a href="#cafeteria">Cafeteria</a></li>
-                <li><a href="#cooperative-education-office">Co-operative Education Office</a></li>
-                <li><a href="#computer-lab-1">Computer Lab 1</a></li>
-                <li><a href="#computer-lab-2">Computer Lab 2 / Editing Suite</a></li>
-                <li><a href="#cosmetic-lab">Cosmetic Lab</a></li>
-                <li><a href="#custome">Costume/Changing Room</a></li>
-                <li><a href="#dance">Dance Studio</a></li>
-                <li><a href="#dean-institute">Dean Institute</a></li>
-                <li><a href="#computer-lab-2">Editing Suite/ Computer lab 2</a></li>
-                <li><a href="#engineering-graphics-design">Engineering & Graphics Design</a></li>
-                <li><a href="#executive-assistant">Executive Assistant & H.O.D Education</a></li>
-                <li><a href="#guild-office">Guild Office</a></li>
-                <li><a href="#hod-film-production">H.O.D Film Production</a></li>
-                <li><a href="#hr-office">H.R Office</a></li>
-                <li><a href="#ict-lab-1">ICT Lab 1</a></li>
-                <li><a href="#ict-lab2">ICT Lab 2</a></li>
-                <li><a href="#room-501">Laboratory 1</a></li>
-                <li><a href="#room-502">Laboratory 2</a></li>
-                <li><a href="#room-708">Law School Board Room</a></li>
-                <li><a href="#office-registrar-law">Law School Registrar</a></li>
-                <li><a href="#room-907">Law Society Office</a></li>
-                <li><a href="#marketing-office">Marketing Office</a></li>
-                <li><a href="#mechanical-lab">Mechanical Lab</a></li>
-                <li><a href="#room-909">Meeting Room 1</a></li>
-                <li><a href="#room-910">Meeting Room 2</a></li>
-                <li><a href="#music">Music Room</a></li>
-                <li><a href="#nutrition-lab">Nutrition Laboratory</a></li>
-                <li><a href="#office-dean">Office of the Dean</a></li>
-                <li><a href="#principal-office">Principal's Office</a></li>
-                <li><a href="#room-908">Program Administrators</a></li>
-                <li><a href="#quality-assurance">Quality Assurance Office</a></li>
-                <li><a href="#reception">Reception</a></li>
-                <li><a href="#registration">Registration Office</a></li>
-                <li><a href="#server">Server Room</a></li>
-                <li><a href="#sick-bay">Sick Bay</a></li>
-                <li><a href="#room-905">Silent Room 1</a></li>
-                <li><a href="#room-906">Silent Room 2</a></li>
-                <li><a href="#skills-lab">Skills Laboratory</a></li>
-                <li><a href="#staff">Staff Office</a></li>
-                <li><a href="#student-support-office">Student Support Office</a></li>
-                <li><a href="#university-administrator">University Administrator</a></li>
-                <li><a href="#vice-chancellor">Vice Chancellor's Coordination Office</a></li>
-                <li><a href="#vu-law-clinic">VU Law Clinic</a></li>
-            </ul>
+            <!-- A–Z Dropdown – matches Quick Find by Room Number style -->
+            <div class="select-container">
+                <label for="roomAZSelect"><strong>Jump to a Room (A–Z):</strong></label>
+                <select id="roomAZSelect" onchange="if(this.value){ window.location.href = this.value; this.value=''; }">
+                    <option value="">-- Select a room name --</option>
+                    <option value="#anatomy-lab">Anatomy Laboratory</option>
+                    <option value="#art-gallery">Art Gallery</option>
+                    <option value="#art-room">Art Room</option>
+                    <option value="#office-associate-dean">Associate Dean</option>
+                    <option value="#cafeteria">Cafeteria</option>
+                    <option value="#cooperative-education-office">Co-operative Education Office</option>
+                    <option value="#computer-lab-1">Computer Lab 1</option>
+                    <option value="#computer-lab-2">Computer Lab 2 / Editing Suite</option>
+                    <option value="#cosmetic-lab">Cosmetic Lab</option>
+                    <option value="#custome">Costume / Changing Room</option>
+                    <option value="#dance">Dance Studio</option>
+                    <option value="#dean-institute">Dean Institute</option>
+                    <option value="#engineering-graphics-design">Engineering &amp; Graphics Design</option>
+                    <option value="#executive-assistant">Executive Assistant &amp; H.O.D Education</option>
+                    <option value="#guild-office">Guild Office</option>
+                    <option value="#hod-film-production">H.O.D Film Production</option>
+                    <option value="#hr-office">H.R Office</option>
+                    <option value="#ict-lab-1">ICT Lab 1</option>
+                    <option value="#ict-lab2">ICT Lab 2</option>
+                    <option value="#room-501">Laboratory 1</option>
+                    <option value="#room-502">Laboratory 2</option>
+                    <option value="#room-708">Law School Board Room</option>
+                    <option value="#office-registrar-law">Law School Registrar</option>
+                    <option value="#room-907">Law Society Office</option>
+                    <option value="#marketing-office">Marketing Office</option>
+                    <option value="#mechanical-lab">Mechanical Lab</option>
+                    <option value="#room-909">Meeting Room 1</option>
+                    <option value="#room-910">Meeting Room 2</option>
+                    <option value="#music">Music Room</option>
+                    <option value="#nutrition-lab">Nutrition Laboratory</option>
+                    <option value="#office-dean">Office of the Dean</option>
+                    <option value="#principal-office">Principal's Office</option>
+                    <option value="#room-908">Program Administrators</option>
+                    <option value="#quality-assurance">Quality Assurance Office</option>
+                    <option value="#reception">Reception</option>
+                    <option value="#registration">Registration Office</option>
+                    <option value="#server">Server Room</option>
+                    <option value="#sick-bay">Sick Bay</option>
+                    <option value="#room-905">Silent Room 1</option>
+                    <option value="#room-906">Silent Room 2</option>
+                    <option value="#skills-lab">Skills Laboratory</option>
+                    <option value="#staff">Staff Office</option>
+                    <option value="#student-support-office">Student Support Office</option>
+                    <option value="#university-administrator">University Administrator</option>
+                    <option value="#vice-chancellor">Vice Chancellor's Coordination Office</option>
+                    <option value="#vu-law-clinic">VU Law Clinic</option>
+                </select>
+            </div>
 
             <!-- Dropdown – clean, every room listed, matching anchors -->
             <div class="select-container">

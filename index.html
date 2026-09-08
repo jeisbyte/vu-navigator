@@ -29,57 +29,22 @@
         <a href="facilities.html">Facilities</a>
         <a href="about.html">About Us</a>
       </nav>
-    </div>
-  </header>
-
-  <main>
-    <!-- ── HERO ROOM SEARCH ── -->
-    <section class="hero-search-section" aria-label="Room search">
-      <div class="hero-badge">Official Campus Navigation Portal</div>
-      <h1 class="hero-title">Find Your Destination</h1>
-      <p class="hero-subtitle">Interactive floor plans and walking directions for Victoria University Tower at Market Plaza. Type a room number or name below.</p>
-      
-      <div class="search-wrapper">
-        <span class="search-icon">🔍</span>
+      <div class="header-search-wrapper">
+        <span class="header-search-icon">🔍</span>
         <input
           type="search"
           id="globalSearch"
-          placeholder="Search by room (e.g. 202, B107, 301) or facility (Cafeteria, Library)..."
+          placeholder="Search room or facility…"
           autocomplete="off"
           aria-label="Search rooms"
           spellcheck="false"
         >
         <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
       </div>
-    </section>
+    </div>
+  </header>
 
-    <!-- ── PRIORITY QUICK ACTIONS ── -->
-    <section class="quick-actions-section" aria-label="Navigation Shortcuts">
-      <a href="directions.html" class="action-card">
-        <div class="action-card-icon">🧭</div>
-        <h3>Rooms &amp; Directions</h3>
-        <p>Step-by-step walking routes from the Ground Floor main entrance to any room.</p>
-        <span class="action-card-link">View Directions &rarr;</span>
-      </a>
-      <a href="#floorSelector" class="action-card">
-        <div class="action-card-icon">🗺️</div>
-        <h3>Floor Directory</h3>
-        <p>Explore full floor layouts and room rosters across levels B2 to Floor 9.</p>
-        <span class="action-card-link">Browse Floors &rarr;</span>
-      </a>
-      <a href="new-student-guide.html" class="action-card">
-        <div class="action-card-icon">🎓</div>
-        <h3>New Student Guide</h3>
-        <p>Essential first-day orientation, key contact offices, and campus tips.</p>
-        <span class="action-card-link">Open Guide &rarr;</span>
-      </a>
-      <a href="facilities.html" class="action-card">
-        <div class="action-card-icon">🏫</div>
-        <h3>Campus Facilities</h3>
-        <p>Locate the Library, Cafeteria, ICT Computer Labs, Sick Bay, and Law Clinic.</p>
-        <span class="action-card-link">Explore Facilities &rarr;</span>
-      </a>
-    </section>
+  <main>
 
     <!-- ── FLOOR SELECTOR GRID ── -->
     <div class="floor-selector" id="floorSelector">

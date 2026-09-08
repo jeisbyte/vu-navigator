@@ -123,6 +123,77 @@ header.scrolled {
   gap: 1.25rem;
 }
 
+/* Header inline search bar */
+.header-search-wrapper {
+  position: relative;
+  width: 260px;
+  flex-shrink: 0;
+  z-index: 1001;
+}
+
+.header-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.header-search-wrapper #globalSearch {
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 2.4rem;
+  font-size: 0.875rem;
+  font-family: inherit;
+  background: var(--bg-subtle);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-full);
+  color: var(--text-primary);
+  outline: none;
+  box-shadow: none;
+  transition: all var(--transition);
+}
+
+.header-search-wrapper #globalSearch::placeholder {
+  color: var(--text-muted);
+  font-size: 0.83rem;
+}
+
+.header-search-wrapper #globalSearch:hover {
+  border-color: #cbd5e1;
+  background: #ffffff;
+}
+
+.header-search-wrapper #globalSearch:focus {
+  border-color: var(--vu-blue);
+  background: #ffffff;
+  box-shadow: var(--shadow-glow);
+}
+
+.header-search-wrapper .search-results {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  min-width: 340px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  max-height: 380px;
+  overflow-y: auto;
+  z-index: 9999;
+  display: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--vu-blue) #f1f5f9;
+}
+
+.header-search-wrapper .search-results.open {
+  display: block;
+}
+
 /* Header Brand (Logo + Official Typography) */
 .header-brand {
   display: flex;
@@ -335,10 +406,16 @@ nav.floor-nav:not(.site-nav) a.active {
    ========================================================================== */
 main {
   max-width: 1240px;
-  margin: 1.75rem auto 3.5rem;
+  margin: 1.25rem auto 2rem;
   padding: 0 1.25rem;
   flex: 1;
   width: 100%;
+}
+
+/* On the home page keep the floor selector right at the top with minimal spacing */
+body.home-page main {
+  margin-top: 0.75rem;
+  margin-bottom: 1.5rem;
 }
 
 /* ==========================================================================
@@ -651,14 +728,14 @@ body.home-page {
   background: #ffffff;
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
-  padding: 2.25rem 2rem;
+  padding: 1.5rem 2rem;
   box-shadow: var(--shadow-sm);
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
   text-align: center;
 }
 
 .floor-selector-header {
-  margin-bottom: 1.75rem;
+  margin-bottom: 1rem;
 }
 
 .floor-selector h2 {
@@ -677,9 +754,9 @@ body.home-page {
 .floor-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 14px;
+  gap: 12px;
   max-width: 900px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 1.25rem;
 }
 
 .floor-btn {
@@ -875,7 +952,8 @@ body.home-page {
   letter-spacing: 0.02em;
 }
 
-#roomSelect {
+#roomSelect,
+#roomAZSelect {
   flex: 2;
   min-width: 220px;
   width: 100%;
@@ -896,17 +974,20 @@ body.home-page {
   background-size: 16px;
 }
 
-#roomSelect:hover {
+#roomSelect:hover,
+#roomAZSelect:hover {
   border-color: var(--vu-blue);
 }
 
-#roomSelect:focus {
+#roomSelect:focus,
+#roomAZSelect:focus {
   outline: none;
   border-color: var(--vu-blue);
   box-shadow: var(--shadow-glow);
 }
 
-#roomSelect option {
+#roomSelect option,
+#roomAZSelect option {
   background: #ffffff;
   color: var(--text-primary);
 }

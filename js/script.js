@@ -210,7 +210,7 @@ function initSearch() {
 
   // Close when clicking outside or clicking an item
   document.addEventListener('click', (e) => {
-    if (!e.target.closest('.search-wrapper')) {
+    if (!e.target.closest('.search-wrapper, .header-search-wrapper')) {
       results.classList.remove('open');
     }
   });
